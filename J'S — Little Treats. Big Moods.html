@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J'S — Little Treats. Big Moods.</title>
+<meta name="description" content="J'S is the little treat brand from Alexandria. Order the Classic Cinnamon Roll on WhatsApp — a little something good, no occasion needed.">
+<meta name="theme-color" content="#5E0B13">
+<meta property="og:title" content="J'S — Little Treats. Big Moods.">
+<meta property="og:description" content="The Classic Cinnamon Roll, delivered in Alexandria. Order on WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%235E0B13'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%23E1ACB5' stroke-width='2' stroke-dasharray='3 3'/%3E%3Ctext x='32' y='41' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='24' text-anchor='middle' fill='%23FDF2D2'%3EJ%27S%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;600&family=Lilita+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"J'S","slogan":"A little something good.","description":"The little treat brand. Classic Cinnamon Rolls, ordered on WhatsApp.","telephone":"+201284184425","areaServed":{"@type":"City","name":"Alexandria, Egypt"},"currenciesAccepted":"EGP"}
+</script>
+<style>
+/*
+VOICE: short, warm, a little cheeky — a friend handing you a roll, never a sales pitch.
+IDEA: the bakery-box sticker sheet — checkerboard liner paper, admit-one tickets, round seal stickers.
+PICTURE: a big top-down Classic Cinnamon Roll on checker paper, glossy icing, with a spinning J'S seal.
+COLOUR and TYPE: burgundy + espresso fields, vanilla cream reading ground, blush as the sharp accent. Lilita One / Poppins; Amiri + Plex Arabic.
+LAYOUT: oversized poster hero, then alternating full-bleed bands; one calm column for ordering.
+*/
+:root{
+  color-scheme:light;
+  --esp:#28110C;--bur:#5E0B13;--blush:#E1ACB5;--cream:#FDF2D2;--coffee:#603027;
+  --cream-2:#F6E6BF;--ink:#28110C;--muted:#6B4A40;
+  --display:'Lilita One','Fredoka',ui-rounded,'Arial Rounded MT Bold',system-ui,sans-serif;
+  --body:'Poppins','Lato',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ar-display:'Amiri','Times New Roman',serif;
+  --ar:'IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif;
+  --r:18px;--shadow:0 18px 40px -18px rgba(40,17,12,.45);
+}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:light}
+*{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.01em}
+p{margin:0 0 1em}
+[lang=ar]{font-family:var(--ar);line-height:1.7}
+.ar-display{font-family:var(--ar-display);font-weight:700}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--blush);color:var(--esp);padding:10px 14px;border-radius:10px;z-index:100;font-weight:600}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--blush);outline-offset:3px;border-radius:6px}
+.on-cream :focus-visible,.band.cream :focus-visible{outline-color:var(--bur)}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,18px);position:relative}
+.band.bur{background:var(--bur);color:var(--cream)}
+.band.esp{background:var(--esp);color:var(--cream)}
+.band.blush{background:var(--blush);color:var(--esp)}
+.band.cream{background:var(--cream)}
+.band.coffee{background:var(--coffee);color:var(--cream)}
+.checker{background:repeating-conic-gradient(var(--bur) 0 25%,var(--cream) 0 50%) 0 0/36px 36px}
+.checker-strip{height:36px;background:repeating-conic-gradient(var(--esp) 0 25%,var(--blush) 0 50%) 0 0/36px 36px}
+.checker-strip.cb{background:repeating-conic-gradient(var(--bur) 0 25%,var(--cream) 0 50%) 0 0/36px 36px}
+
+/* Buttons */
+.btn{--bg:var(--blush);--fg:var(--esp);display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:.7em 1.4em;border-radius:999px;border:2px solid var(--esp);background:var(--bg);color:var(--fg);font:600 15px/1.1 var(--body);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--esp);transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--esp)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--esp)}
+.btn.bur{--bg:var(--bur);--fg:var(--cream)}
+.btn.cream{--bg:var(--cream);--fg:var(--esp)}
+.btn.ghost{--bg:transparent;--fg:currentColor;border-color:currentColor;box-shadow:none}
+.btn.ghost:hover{box-shadow:none;background:rgba(253,242,210,.12)}
+.esp .btn:not(.ghost),.bur .btn:not(.ghost),.coffee .btn:not(.ghost){border-color:var(--esp)}
+.esp .btn:not(.ghost),.bur .btn:not(.ghost){box-shadow:4px 4px 0 #0008}
+.btn.wrap-ok{white-space:normal;text-align:center;line-height:1.3}
+.btn.big{min-height:56px;font-size:16px;padding:.8em 1.8em}
+.btn.wa{--bg:var(--bur);--fg:var(--cream);font-size:16px}
+.btn[aria-disabled=true],.btn:disabled{opacity:.5;pointer-events:none}
+.linkbtn{background:none;border:0;padding:0;color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px}
+
+/* Stickers, tickets */
+.sticker{display:inline-flex;align-items:center;gap:.4em;background:var(--blush);color:var(--esp);border:2px solid var(--esp);border-radius:999px;padding:.35em .9em;font:600 13px/1.2 var(--body);transform:rotate(-3deg);box-shadow:3px 3px 0 var(--esp)}
+.sticker.cream{background:var(--cream)}
+.sticker.bur{background:var(--bur);color:var(--cream)}
+.ticket{--notch:16px;background:var(--cream);color:var(--esp);padding:22px 30px;-webkit-mask:radial-gradient(circle var(--notch) at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle var(--notch) at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--notch) at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat}
+.ticket.blush{background:var(--blush)}
+.ticket .perf{border-top:2px dashed currentColor;opacity:.4;margin:14px 0}
+.heart{width:34px;height:34px;color:var(--blush)}
+.spin{animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wobble{animation:wobble 5s ease-in-out infinite}
+@keyframes wobble{50%{transform:rotate(4deg) translateY(-4px)}}
+
+/* Header */
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:14px;padding:10px max(5vw,18px);background:var(--bur);color:var(--cream);border-bottom:3px solid var(--esp)}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;margin-inline-end:auto}
+.logo .mark{font:400 34px/1 var(--display);color:var(--cream);letter-spacing:.02em}
+.logo .desc{font:600 11px/1.2 var(--body);color:var(--blush);text-transform:uppercase;letter-spacing:.08em}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;text-decoration:none;font-weight:500}
+.nav a:not(.btn):hover,.nav a[aria-current=page]:not(.btn){background:rgba(225,172,181,.18)}
+.nav a[aria-current=page]:not(.btn){box-shadow:inset 0 -3px 0 var(--blush)}
+.nav .btn{margin-inline-start:6px;min-height:44px;box-shadow:3px 3px 0 #0008}
+.cartbtn,.menubtn{position:relative;display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;border:2px solid var(--cream);background:transparent;color:var(--cream);cursor:pointer}
+.cartbtn:hover,.menubtn:hover{background:rgba(253,242,210,.12)}
+.cartbtn svg{width:24px;height:24px}
+.cartbtn .count{position:absolute;top:-6px;right:-6px;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--blush);color:var(--esp);font:700 12px/24px var(--body);border:2px solid var(--esp)}
+.cartbtn .count[data-n="0"]{display:none}
+.cartbtn.bump{animation:bump .45s ease}
+@keyframes bump{30%{transform:scale(1.18) rotate(-8deg)}60%{transform:scale(.95) rotate(4deg)}}
+.menubtn{display:none}
+.menubtn span,.menubtn span::before,.menubtn span::after{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:transform .2s}
+.menubtn span::before,.menubtn span::after{content:"";position:absolute;left:0}
+.menubtn span::before{top:-6px}.menubtn span::after{top:6px}
+.menubtn[aria-expanded=true] span{background:transparent}
+.menubtn[aria-expanded=true] span::before{transform:translateY(6px) rotate(45deg)}
+.menubtn[aria-expanded=true] span::after{transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:760px){
+  .logo .desc{display:none}
+  .menubtn{display:inline-grid}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:4px;padding:14px max(5vw,18px) 22px;background:var(--bur);border-bottom:3px solid var(--esp);display:none}
+  .nav.open{display:flex}
+  .nav a{font:400 26px/1 var(--display);min-height:54px}
+  .nav .btn{margin:8px 0 0;font:600 16px/1 var(--body)}
+}
+
+/* Views */
+.js .view{display:none}
+.js .view.active{display:block}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+/* Hero */
+.hero{background:var(--bur);color:var(--cream);overflow:hidden;padding-top:clamp(28px,5vw,64px);padding-bottom:0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:center}
+.hero h1{font-size:clamp(56px,10.5vw,148px);line-height:.88;color:var(--cream)}
+.hero h1 .pk{color:var(--blush);display:block}
+.hero .tag{font:600 clamp(15px,1.6vw,18px)/1.3 var(--body);letter-spacing:.12em;color:var(--blush);margin:22px 0 28px;display:flex;align-items:center;gap:12px}
+.hero .tag::before{content:"";width:40px;height:3px;background:var(--blush);border-radius:3px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero .ar{font-size:clamp(20px,2.4vw,28px);color:var(--cream);opacity:.92;margin-top:28px}
+.hero-pic{position:relative;aspect-ratio:1/1;max-width:640px;justify-self:center;width:100%}
+.hero-pic .paper{position:absolute;inset:7% 3% 3% 7%;transform:rotate(-6deg);border-radius:14px;border:3px solid var(--esp);box-shadow:12px 12px 0 var(--esp)}
+.hero-pic .roll{position:absolute;inset:4%;filter:drop-shadow(0 26px 28px rgba(40,17,12,.55))}
+.hero-pic .seal{position:absolute;width:30%;right:-2%;top:0}
+.hero-pic .ph{position:absolute;left:4%;bottom:6%}
+.hero-foot{margin:clamp(28px,4vw,48px) calc(-1 * max(5vw,18px)) 0}
+.marquee{background:var(--blush);color:var(--esp);border-block:3px solid var(--esp);overflow:hidden;white-space:nowrap}
+.marquee .track{display:inline-flex;gap:36px;padding:12px 0;font:400 22px/1 var(--display);animation:slide 28s linear infinite}
+.marquee .track span{display:inline-flex;align-items:center;gap:36px}
+.marquee .track span::after{content:"✦";font-size:16px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Placeholder tag */
+.ph{display:inline-flex;align-items:center;gap:6px;background:var(--cream);color:var(--esp);border:1.5px dashed var(--esp);border-radius:8px;padding:4px 9px;font:500 12px/1.3 var(--body);max-width:90%}
+.ph::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--bur);flex:none}
+
+/* Signature roll */
+.sig{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.sig-pic{position:relative;aspect-ratio:1/1}
+.sig-pic .board{position:absolute;inset:0;border-radius:50%;border:3px solid var(--esp);box-shadow:10px 10px 0 var(--esp)}
+.sig-pic .roll{position:absolute;inset:6%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sig-pic:hover .roll{transform:rotate(-14deg) scale(1.03)}
+.sig-pic .sticker{position:absolute;top:4%;left:-2%}
+.sig-pic .ph{position:absolute;bottom:2%;right:0}
+.sig h2{font-size:clamp(44px,6vw,80px);color:var(--bur)}
+.eyebrow{display:inline-block;margin-bottom:16px}
+.lede{font-size:18px;max-width:52ch;color:var(--coffee)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.chips li{border:2px solid var(--coffee);color:var(--coffee);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500}
+
+/* Buy block */
+.buy{display:grid;gap:16px;margin-top:8px}
+.pricerow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.price{font:400 34px/1 var(--display);color:var(--esp);white-space:nowrap}
+.price.tbc{font:600 16px/1.3 var(--body);color:var(--coffee);white-space:normal}
+.avail{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;border-radius:999px;padding:4px 10px;background:#e8f0d8;color:#2f4a12;border:1.5px solid #2f4a12}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.avail.sold-out,.avail.coming-soon{background:var(--cream-2);color:var(--coffee);border-color:var(--coffee)}
+.buyrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--esp);border-radius:999px;background:var(--cream);overflow:hidden;height:48px}
+.qty button{width:46px;height:100%;border:0;background:transparent;font:600 22px/1 var(--body);color:var(--esp);cursor:pointer}
+.qty button:hover{background:var(--cream-2)}
+.qty input{width:48px;height:100%;border:0;border-inline:2px solid var(--esp);text-align:center;font:600 17px var(--body);color:var(--esp);background:#fff9e8;-moz-appearance:textfield;appearance:textfield}
+.qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.qty.sm{height:40px}.qty.sm button{width:38px;font-size:18px}.qty.sm input{width:40px;font-size:15px}
+.note{font-size:13px;color:var(--muted);margin:0}
+.bur .note,.esp .note{color:var(--blush)}
+
+/* Story / founder */
+.story{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end}
+.story h2{font-size:clamp(46px,7.4vw,104px);color:var(--bur)}
+.story .ar-big{font-size:clamp(30px,4vw,50px);color:var(--bur);line-height:1.5;margin:0}
+.story .ar-sub{font-size:20px;color:var(--coffee)}
+.moments{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.founder{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(28px,6vw,90px);align-items:center}
+.polaroid{background:var(--cream);padding:16px 16px 64px;border:3px solid var(--esp);box-shadow:12px 12px 0 var(--esp);transform:rotate(-4deg);position:relative;max-width:420px;width:100%;justify-self:center}
+.polaroid .frame{aspect-ratio:4/5;background:repeating-conic-gradient(var(--blush) 0 25%,#ecc0c7 0 50%) 0 0/28px 28px;display:grid;place-items:center;text-align:center;color:var(--esp);overflow:hidden}
+.polaroid .frame img{width:100%;height:100%;object-fit:cover}
+.polaroid .frame .inner{background:var(--cream);border:2px dashed var(--esp);border-radius:12px;padding:16px 18px;max-width:80%;font-size:14px}
+.polaroid .frame .inner b{display:block;font:400 22px/1.1 var(--display);margin-bottom:4px}
+.polaroid .cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:400 26px/1 var(--display);color:var(--bur)}
+.polaroid .tape{position:absolute;top:-16px;left:50%;width:120px;height:32px;margin-left:-60px;background:rgba(225,172,181,.85);transform:rotate(3deg);border:1px solid rgba(40,17,12,.2)}
+.founder h2{font-size:clamp(42px,6vw,84px)}
+.founder h2 .pk{color:var(--blush)}
+
+/* First drop */
+.drop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.drop .big-ticket{transform:rotate(-2.5deg);box-shadow:none;max-width:560px;width:100%;justify-self:center}
+.big-ticket .bt-top{display:flex;justify-content:space-between;gap:12px;font:600 12px/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase}
+.big-ticket h2{font-size:clamp(46px,6.5vw,92px);color:var(--bur);margin:12px 0 6px}
+.big-ticket .bt-row{display:flex;align-items:center;gap:18px}
+.big-ticket .bt-row svg{width:120px;flex:none}
+.big-ticket .bt-row p{margin:0;font-weight:500}
+.drop-copy h3{font-size:clamp(32px,4vw,52px);color:var(--blush);margin-bottom:14px}
+.drop-copy .facts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.countdown{display:flex;gap:10px;margin:0 0 22px}
+.countdown div{background:var(--blush);color:var(--esp);border:2px solid var(--esp);border-radius:12px;padding:8px 12px;text-align:center;min-width:64px}
+.countdown b{display:block;font:400 30px/1 var(--display)}
+.countdown span{font-size:11px;font-weight:600;text-transform:uppercase}
+
+/* Page heads */
+.pagehead{padding-block:clamp(40px,6vw,84px) clamp(32px,4vw,56px);overflow:hidden}
+.pagehead h1{font-size:clamp(60px,11vw,150px);line-height:.88}
+.pagehead p{max-width:56ch;font-size:18px;margin-top:18px}
+.pagehead .seal{position:absolute;right:max(5vw,18px);top:50%;width:clamp(110px,14vw,170px);margin-top:calc(clamp(110px,14vw,170px) / -2)}
+
+/* Menu */
+.menu-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border:3px solid var(--esp);border-radius:28px;overflow:hidden;background:var(--cream);box-shadow:10px 10px 0 var(--esp)}
+.menu-card .pic{position:relative;background:var(--blush);aspect-ratio:1/1}
+.menu-card .pic .checker{position:absolute;inset:0;opacity:.9}
+.menu-card .pic .roll{position:absolute;inset:8%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.menu-card:hover .pic .roll{transform:rotate(12deg) scale(1.04)}
+.menu-card .pic .ph{position:absolute;left:14px;bottom:14px}
+.menu-card .pic .sticker{position:absolute;top:16px;right:16px;transform:rotate(6deg)}
+.menu-card .body{padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;justify-content:center}
+.menu-card h2{font-size:clamp(38px,5vw,64px);color:var(--bur)}
+.menu-card h2 a{text-decoration:none}
+.menu-card h2 a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+.later{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px;margin-top:22px}
+.later .ticket{padding:24px 30px;display:flex;flex-direction:column;gap:6px}
+.later h3{font-size:30px;color:var(--bur)}
+.later .ticket p{margin:0;color:var(--coffee)}
+.later .lbl{font-size:12px;font-weight:600;color:var(--coffee);text-transform:uppercase;letter-spacing:.1em}
+.sec-title{font-size:clamp(36px,5vw,64px);margin-bottom:8px}
+
+/* Product details */
+.pd{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.pd-main{position:relative;aspect-ratio:1/1;border:3px solid var(--esp);border-radius:28px;overflow:hidden;box-shadow:10px 10px 0 var(--esp)}
+.pd-main .checker{position:absolute;inset:0}
+.pd-main .roll{position:absolute;inset:7%}
+.pd-main img.photo,.thumb img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pd-main .ph{position:absolute;left:14px;bottom:14px}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.thumb{position:relative;aspect-ratio:1/1;border:2.5px solid var(--esp);border-radius:16px;overflow:hidden;background:var(--blush)}
+.thumb svg{position:absolute;inset:0;width:100%;height:100%}
+.thumb .ph{position:absolute;left:6px;bottom:6px;right:6px;font-size:10.5px;padding:3px 6px}
+.thumb .ph::before{display:none}
+.pd h1{font-size:clamp(46px,6.5vw,88px);color:var(--bur);margin:10px 0 16px}
+.crumbs{font-size:14px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{text-decoration:none;font-weight:500}.crumbs a:hover{text-decoration:underline}
+.facts-list{margin:28px 0 0;padding:0;list-style:none;border-top:2px solid var(--esp)}
+.facts-list li{display:grid;grid-template-columns:9em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:2px solid var(--esp)}
+.facts-list b{font-weight:600}
+.facts-list span{color:var(--coffee)}
+.pd-sticky{position:sticky;top:96px}
+
+/* Order page */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--cream);color:var(--esp);border:2.5px solid var(--esp);border-radius:18px;padding:18px;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blush);border:2px solid var(--esp);font:400 22px/1 var(--display);margin-bottom:10px}
+.steps b{display:block;font:400 22px/1.1 var(--display);margin-bottom:4px}
+.steps span{font-size:14px;color:var(--coffee)}
+.checkout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);align-items:start}
+.panel{background:#fff9e8;border:2.5px solid var(--esp);border-radius:24px;padding:clamp(20px,3vw,32px)}
+.panel h2{font-size:clamp(30px,3.6vw,42px);color:var(--bur);margin-bottom:6px}
+.panel+.panel{margin-top:22px}
+.summary{position:sticky;top:96px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.field{margin-top:18px}
+.field label{display:block;font-weight:600;margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--muted);font-size:14px}
+.field input,.field textarea,.field select{width:100%;min-height:50px;border:2px solid var(--esp);border-radius:14px;background:var(--cream);padding:12px 14px;font:16px/1.4 var(--body);color:var(--esp)}
+.field textarea{min-height:96px;resize:vertical}
+.field input[readonly]{background:var(--cream-2)}
+.field [aria-invalid=true]{border-color:#B3261E;background:#fff1ef;box-shadow:0 0 0 3px rgba(179,38,30,.15)}
+.err{color:#B3261E;font-size:14px;font-weight:500;margin:6px 0 0;min-height:0}
+.err:empty{display:none}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px}
+.formerr{background:#fff1ef;border:2px solid #B3261E;color:#7a1610;border-radius:14px;padding:12px 14px;margin-top:18px;font-weight:500}
+.formerr:empty{display:none}
+.lines{list-style:none;margin:0;padding:0}
+.line{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 0;border-bottom:2px dashed rgba(40,17,12,.3)}
+.line .lp{width:64px;height:64px;border-radius:14px;border:2px solid var(--esp);background:var(--blush);overflow:hidden;position:relative}
+.line .lp svg,.line .lp img{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);object-fit:cover}
+.line .ln{font-weight:600;line-height:1.25}
+.line .lu{font-size:13px;color:var(--muted)}
+.line .lc{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.line .lt{font-weight:600;white-space:nowrap;text-align:right}
+.rm{background:none;border:0;color:var(--bur);font:500 13px var(--body);text-decoration:underline;cursor:pointer;min-height:40px;padding:0 4px}
+.totals{margin:14px 0 0;display:grid;gap:8px}
+.totals div{display:flex;justify-content:space-between;gap:12px}
+.totals dt{color:var(--coffee)}
+.totals dd{margin:0;font-weight:600;text-align:right}
+.totals .grand{border-top:2.5px solid var(--esp);padding-top:10px;font-size:18px}
+.totals .grand dt{color:var(--esp);font-weight:600}
+.empty{text-align:center;padding:18px 6px}
+.empty svg{width:120px;margin:0 auto 10px}
+.empty h3{font-size:28px;color:var(--bur);margin-bottom:6px}
+.msgprev{white-space:pre-wrap;background:var(--cream);border:2px dashed var(--esp);border-radius:14px;padding:16px;font:14px/1.55 var(--body);margin:14px 0;max-height:360px;overflow:auto}
+.callout{display:flex;gap:12px;align-items:flex-start;background:var(--blush);color:var(--esp);border:2px solid var(--esp);border-radius:16px;padding:14px 16px;font-size:15px}
+.callout svg{width:26px;height:26px;flex:none;margin-top:1px}
+.callout p{margin:0}
+.callout.cream{background:var(--cream)}
+.pay{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.pay ol{margin:0;padding:0;list-style:none;counter-reset:p}
+.pay ol li{counter-increment:p;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:2px solid rgba(253,242,210,.25)}
+.pay ol li::before{content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--blush);color:var(--esp);font:400 20px/1 var(--display)}
+.alias{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--cream);color:var(--esp);border-radius:14px;padding:14px 16px;margin:14px 0}
+.alias b{font:400 30px/1 var(--display);letter-spacing:.03em}
+.faq details{border-bottom:2.5px solid var(--esp)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font:400 clamp(22px,2.6vw,28px)/1.15 var(--display);color:var(--bur);min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:2px solid var(--esp);font:600 22px/1 var(--body);color:var(--esp);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--blush)}
+.faq .a{padding:0 0 20px;max-width:70ch;color:var(--coffee)}
+.faq .a p:last-child{margin:0}
+.faqgrid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px)}
+.sentnote{margin-top:16px}
+
+/* Footer */
+.foot{background:var(--esp);color:var(--cream);padding:clamp(48px,6vw,80px) max(5vw,18px) 28px}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot .mark{font:400 clamp(72px,10vw,120px)/.85 var(--display);color:var(--blush)}
+.foot .desc{font:600 12px/1.3 var(--body);letter-spacing:.14em;text-transform:uppercase;margin:10px 0 16px}
+.foot h3{font:600 13px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--blush);margin-bottom:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.foot li a,.foot li .soon{display:inline-flex;align-items:center;gap:10px;min-height:40px;text-decoration:none}
+.foot li a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot .ico{width:34px;height:34px;border-radius:50%;background:var(--blush);color:var(--esp);display:grid;place-items:center;flex:none;border:2px solid var(--cream)}
+.foot .ico svg{width:18px;height:18px}
+.foot .soon small{display:block;font-size:12px;color:var(--blush);line-height:1.2}
+.foot .legal{border-top:1px solid rgba(253,242,210,.2);margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;opacity:.85}
+
+/* Drawer */
+.scrim{position:fixed;inset:0;background:rgba(40,17,12,.55);z-index:60;opacity:0;transition:opacity .25s}
+.scrim.open{opacity:1}
+.drawer{position:fixed;z-index:61;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--cream);border-left:3px solid var(--esp);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--bur);color:var(--cream)}
+.drawer-head h2{font-size:30px}
+.xbtn{width:44px;height:44px;border-radius:50%;border:2px solid var(--cream);background:transparent;color:var(--cream);font:500 24px/1 var(--body);cursor:pointer}
+.drawer-body{flex:1;overflow:auto;padding:4px 20px 10px}
+.drawer-foot{padding:16px 20px 20px;border-top:3px solid var(--esp);background:#fff9e8;display:grid;gap:12px}
+.drawer-foot .btn{width:100%}
+@media (max-width:600px){
+  .drawer{top:auto;left:0;width:100%;max-height:88vh;border-left:0;border-top:3px solid var(--esp);border-radius:24px 24px 0 0;transform:translateY(100%)}
+  .drawer-head{border-radius:21px 21px 0 0}
+  .drawer-head::before{content:"";position:absolute;left:50%;top:6px;width:44px;height:4px;margin-left:-22px;border-radius:4px;background:rgba(253,242,210,.5)}
+}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:22px;z-index:70;transform:translate(-50%,140%);display:flex;align-items:center;gap:14px;background:var(--esp);color:var(--cream);border:2px solid var(--blush);border-radius:999px;padding:8px 8px 8px 20px;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.8,.2,1);max-width:calc(100% - 24px)}
+.toast{visibility:hidden}.toast.show{transform:translate(-50%,0);visibility:visible}
+.toast .btn{min-height:40px;padding:.5em 1em;box-shadow:none;border-color:var(--blush)}
+.toast p{margin:0;font-weight:500;font-size:14px}
+
+/* Owner setup notice */
+.setup{position:fixed;left:14px;bottom:14px;opacity:.96;z-index:50;max-width:min(360px,calc(100% - 28px));font-size:13px}
+.setup summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--esp);border:2px dashed var(--bur);border-radius:999px;padding:8px 14px;font-weight:600;min-height:40px}
+.setup summary::-webkit-details-marker{display:none}
+.setup .box{margin-top:8px;background:#fff;border:2px dashed var(--bur);border-radius:14px;padding:14px 16px;color:var(--esp);box-shadow:var(--shadow);max-height:50vh;overflow:auto}
+.setup ul{margin:8px 0;padding-left:18px}
+.setup code{background:var(--cream);padding:1px 5px;border-radius:4px;font-size:12px}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid,.sig,.story,.founder,.drop,.pd,.checkout,.pay,.faqgrid{grid-template-columns:minmax(0,1fr)}
+  .hero-pic{max-width:520px}
+  .summary,.pd-sticky{position:static}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .foot-grid>div:first-child{grid-column:1/-1}
+  .menu-card{grid-template-columns:minmax(0,1fr)}
+  .menu-card .pic{aspect-ratio:4/3}
+  .menu-card .pic .roll{inset:6% 18%}
+  .pagehead .seal{display:none}
+  .checkout .summary{order:-1}
+}
+@media (max-width:600px){
+  .hero .ctas .btn{flex:1 1 100%}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .facts-list li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .big-ticket .bt-row svg{width:84px}
+  .line{grid-template-columns:56px minmax(0,1fr)}
+  .line .lp{width:56px;height:56px}
+  .line .lt{grid-column:2;text-align:left}
+  .toast{border-radius:18px;flex-wrap:wrap;justify-content:center;padding:12px 14px;text-align:center}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main" data-skip>Skip to content</a>
+
+<!-- Shared graphics: illustrations stand in until real photos are added (see JS_CONFIG.images) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="g-dough" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#F5CD95"/><stop offset=".55" stop-color="#E0A162"/><stop offset="1" stop-color="#B66A33"/>
+    </radialGradient>
+    <radialGradient id="g-icing" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#FFFDF5"/><stop offset=".6" stop-color="#FDF2D2"/><stop offset="1" stop-color="#E9D3A8"/>
+    </radialGradient>
+    <symbol id="roll" viewBox="0 0 600 600">
+      <path d="M497.9 300C500 308.6 502.4 317.9 501.9 326.6C501.3 335.3 498.1 344.1 494.5 352.1C490.9 360.1 484.9 367.3 480.3 374.7C475.6 382 471.2 389.1 466.8 396.3C462.3 403.5 458.7 411.2 453.7 417.9C448.7 424.7 442.9 431.1 436.8 436.8C430.7 442.6 423.6 447.2 417.1 452.6C410.5 457.9 404.3 463.5 397.7 469.2C391 474.8 384.7 481.9 377.2 486.4C369.7 491 361.2 495 352.7 496.6C344.1 498.1 334.6 496.7 325.8 495.8C317 494.9 308.5 492.1 300 491.1C291.5 490 283.5 489.9 275.1 489.3C266.7 488.8 258 489.2 249.7 487.7C241.4 486.2 233.2 483.5 225.3 480.4C217.4 477.3 210 473 202.3 469.2C194.6 465.4 186.6 462 179 457.7C171.4 453.4 163 449.3 156.7 443.3C150.3 437.4 145 429.8 141.1 421.9C137.2 414.1 135.8 404.6 133.2 396.3C130.7 388 128.9 379.9 125.8 372.2C122.6 364.4 117.9 357.5 114.4 349.7C110.8 342 106.6 334 104.6 325.7C102.5 317.4 102.1 308.6 102.1 300C102 291.4 103.2 282.8 104 274.2C104.9 265.6 105.2 256.8 107 248.3C108.7 239.8 110.7 230.9 114.6 223.2C118.6 215.5 124.7 208.6 130.6 202.2C136.6 195.8 144.1 191 150.1 185C156 178.9 161.1 172.9 166.2 166.2C171.3 159.4 175.1 151.2 180.7 144.5C186.3 137.9 192.6 131.1 199.7 126.3C206.9 121.5 215.5 118.6 223.7 115.7C231.8 112.8 240.4 111.1 248.8 109C257.2 107 265.6 104.4 274.1 103.4C282.6 102.4 291.5 101.9 300 102.9C308.5 104 316.9 107.4 325 109.9C333.2 112.4 340.7 116 348.8 117.9C356.9 119.9 365.3 120.3 373.8 121.7C382.4 123.1 392 123.4 400.3 126.3C408.5 129.3 416.6 133.8 423.2 139.4C429.9 144.9 435 152.7 440.3 159.7C445.7 166.6 450.3 173.9 455.1 181C459.9 188.1 465.3 194.8 469.4 202.2C473.4 209.7 476.9 217.6 479.4 225.7C481.8 233.8 482.4 242.4 484.1 250.7C485.8 258.9 487.2 266.8 489.5 275.1C491.8 283.3 495.9 291.4 497.9 300Z" fill="url(#g-dough)"/>
+      <path d="M497.9 300C500 308.6 502.4 317.9 501.9 326.6C501.3 335.3 498.1 344.1 494.5 352.1C490.9 360.1 484.9 367.3 480.3 374.7C475.6 382 471.2 389.1 466.8 396.3C462.3 403.5 458.7 411.2 453.7 417.9C448.7 424.7 442.9 431.1 436.8 436.8C430.7 442.6 423.6 447.2 417.1 452.6C410.5 457.9 404.3 463.5 397.7 469.2C391 474.8 384.7 481.9 377.2 486.4C369.7 491 361.2 495 352.7 496.6C344.1 498.1 334.6 496.7 325.8 495.8C317 494.9 308.5 492.1 300 491.1C291.5 490 283.5 489.9 275.1 489.3C266.7 488.8 258 489.2 249.7 487.7C241.4 486.2 233.2 483.5 225.3 480.4C217.4 477.3 210 473 202.3 469.2C194.6 465.4 186.6 462 179 457.7C171.4 453.4 163 449.3 156.7 443.3C150.3 437.4 145 429.8 141.1 421.9C137.2 414.1 135.8 404.6 133.2 396.3C130.7 388 128.9 379.9 125.8 372.2C122.6 364.4 117.9 357.5 114.4 349.7C110.8 342 106.6 334 104.6 325.7C102.5 317.4 102.1 308.6 102.1 300C102 291.4 103.2 282.8 104 274.2C104.9 265.6 105.2 256.8 107 248.3C108.7 239.8 110.7 230.9 114.6 223.2C118.6 215.5 124.7 208.6 130.6 202.2C136.6 195.8 144.1 191 150.1 185C156 178.9 161.1 172.9 166.2 166.2C171.3 159.4 175.1 151.2 180.7 144.5C186.3 137.9 192.6 131.1 199.7 126.3C206.9 121.5 215.5 118.6 223.7 115.7C231.8 112.8 240.4 111.1 248.8 109C257.2 107 265.6 104.4 274.1 103.4C282.6 102.4 291.5 101.9 300 102.9C308.5 104 316.9 107.4 325 109.9C333.2 112.4 340.7 116 348.8 117.9C356.9 119.9 365.3 120.3 373.8 121.7C382.4 123.1 392 123.4 400.3 126.3C408.5 129.3 416.6 133.8 423.2 139.4C429.9 144.9 435 152.7 440.3 159.7C445.7 166.6 450.3 173.9 455.1 181C459.9 188.1 465.3 194.8 469.4 202.2C473.4 209.7 476.9 217.6 479.4 225.7C481.8 233.8 482.4 242.4 484.1 250.7C485.8 258.9 487.2 266.8 489.5 275.1C491.8 283.3 495.9 291.4 497.9 300Z" fill="none" stroke="#8E4A22" stroke-width="5" opacity=".55"/>
+      <path d="M284.6 305L283.8 303.6L283.5 302.1L283.6 300.6L284 299.1L284.4 297.6L284.6 296.2L284.5 294.6L284.1 292.7L283.7 290.6L283.3 288.2L283.2 285.6L283.6 283L284.5 280.7L286 278.8L288 277.4L290.2 276.5L292.5 276L294.8 275.7L297.1 275.4L299.4 275L301.8 274.2L304.4 273.3L307.2 272.4L310.3 271.6L313.6 271.2L316.9 271.5L320 272.4L322.7 274.1L325.1 276.3L327 278.9L328.5 281.7L329.9 284.5L331.3 287.3L332.8 290.1L334.6 293L336.5 296.1L338.3 299.5L339.9 303.2L340.9 307.1L341.1 311.2L340.5 315.2L339.1 319L337.1 322.5L334.5 325.6L331.8 328.5L328.9 331.3L326.1 334.1L323.2 337L320.2 340.1L317 343.2L313.4 346.2L309.3 348.8L304.9 350.8L300.1 351.9L295.3 352.1L290.4 351.5L285.8 350.1L281.3 348.3L277 346.1L272.8 343.9L268.5 341.6L264.1 339.2L259.6 336.6L255 333.7L250.7 330.2L246.8 326.2L243.5 321.5L241.1 316.3L239.6 310.8L239 305.2L239.1 299.5L239.8 293.9L240.7 288.3L241.7 282.8L242.9 277.1L244.2 271.4L245.8 265.5L247.9 259.6L250.7 253.8L254.3 248.4L258.8 243.7L264 239.7L269.7 236.6L275.8 234.3L282.1 232.7L288.5 231.5L294.9 230.7L301.4 230L308 229.4L314.8 229.1L321.8 229.2L328.9 230L335.9 231.7L342.8 234.4L349.1 238.1L354.8 242.8L359.8 248.2L364 254.2L367.8 260.5L371 267L374.1 273.6L376.9 280.4L379.6 287.5L382 294.8L383.8 302.5L384.7 310.5L384.7 318.6L383.5 326.7L381.1 334.5L377.5 341.9L373.1 348.8L368 355.1L362.4 361L356.5 366.6L350.4 372L343.9 377.2L337.1 382.3L329.9 386.9L322.1 390.9L313.7 394L305 396L296 396.8L287 396.2L278.2 394.5L269.6 391.7L261.3 388.2L253.3 384.1L245.6 379.7L237.9 374.9L230.4 369.6L223 363.8L216.1 357.3L209.7 350.1L204.2 342L199.9 333.2L196.8 323.9L195 314.2L194.3 304.3L194.8 294.5L195.9 284.8L197.7 275.2L200 265.6L202.7 256.1L206 246.6L210.1 237.1L215 228L221.1 219.3L228.2 211.4L236.3 204.6L245.3 198.9L255 194.3L265.1 190.9L275.5 188.5L286 186.8L296.5 185.7L307.2 185.1L318.1 185.1L329 185.8L340.1 187.4L351 190.2L361.7 194.2L371.8 199.7L381.1 206.4L389.5 214.3L396.8 223.2L403.3 232.7L408.9 242.7L413.8 253L418.1 263.7L422 274.6L425.2 285.9L427.5 297.5L428.9 309.5L428.9 321.7L427.5 333.9L424.4 345.8L419.8 357.3L413.9 368.1L406.8 378.2L398.8 387.6L390.2 396.3L381 404.5L371.4 412.2L361.2 419.4L350.4 426L339 431.7L326.9 436.3L314.2 439.6L301.2 441.2L288 441.2L275 439.5L262.2 436.3L249.8 431.9L237.9 426.5L226.3 420.2L215.2 413.2L204.4 405.6L194 397.2L184.1 387.9L175.1 377.6L167 366.3L160.4 354.1L155.3 341.1L151.8 327.5L150 313.6L149.8 299.6L150.8 285.7L152.8 271.9L155.8 258.3L159.6 244.8L164.3 231.5L170 218.4L176.8 205.6L184.9 193.5L194.4 182.3L205.2 172.2L217.3 163.5L230.3 156.4L244 150.8L258.2 146.6L272.7 143.6L287.3 141.7L302.1 140.7L317 140.6L332 141.6L347.1 143.7L362 147.2L376.6 152.3L390.7 159L403.8 167.5L415.8 177.5L426.6 188.9L436.1 201.3L444.4 214.6L451.6 228.4L457.9 242.7L463.2 257.5L467.6 272.6L471 288.2L473 304.2L473.4 320.4L472.1 336.7L468.9 352.8L463.7 368.5L456.7 383.4L448 397.5L438 410.6L427 422.8L415.1 434.1L402.4 444.6L389 454.3L374.9 463.1L359.9 470.9L344.2 477.4L327.7 482.2L310.8 485.2L293.5 486.1L276.2 484.9L259.1 481.8L242.5 476.9" fill="none" stroke="#7A3518" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M284.6 305L283.8 303.6L283.5 302.1L283.6 300.6L284 299.1L284.4 297.6L284.6 296.2L284.5 294.6L284.1 292.7L283.7 290.6L283.3 288.2L283.2 285.6L283.6 283L284.5 280.7L286 278.8L288 277.4L290.2 276.5L292.5 276L294.8 275.7L297.1 275.4L299.4 275L301.8 274.2L304.4 273.3L307.2 272.4L310.3 271.6L313.6 271.2L316.9 271.5L320 272.4L322.7 274.1L325.1 276.3L327 278.9L328.5 281.7L329.9 284.5L331.3 287.3L332.8 290.1L334.6 293L336.5 296.1L338.3 299.5L339.9 303.2L340.9 307.1L341.1 311.2L340.5 315.2L339.1 319L337.1 322.5L334.5 325.6L331.8 328.5L328.9 331.3L326.1 334.1L323.2 337L320.2 340.1L317 343.2L313.4 346.2L309.3 348.8L304.9 350.8L300.1 351.9L295.3 352.1L290.4 351.5L285.8 350.1L281.3 348.3L277 346.1L272.8 343.9L268.5 341.6L264.1 339.2L259.6 336.6L255 333.7L250.7 330.2L246.8 326.2L243.5 321.5L241.1 316.3L239.6 310.8L239 305.2L239.1 299.5L239.8 293.9L240.7 288.3L241.7 282.8L242.9 277.1L244.2 271.4L245.8 265.5L247.9 259.6L250.7 253.8L254.3 248.4L258.8 243.7L264 239.7L269.7 236.6L275.8 234.3L282.1 232.7L288.5 231.5L294.9 230.7L301.4 230L308 229.4L314.8 229.1L321.8 229.2L328.9 230L335.9 231.7L342.8 234.4L349.1 238.1L354.8 242.8L359.8 248.2L364 254.2L367.8 260.5L371 267L374.1 273.6L376.9 280.4L379.6 287.5L382 294.8L383.8 302.5L384.7 310.5L384.7 318.6L383.5 326.7L381.1 334.5L377.5 341.9L373.1 348.8L368 355.1L362.4 361L356.5 366.6L350.4 372L343.9 377.2L337.1 382.3L329.9 386.9L322.1 390.9L313.7 394L305 396L296 396.8L287 396.2L278.2 394.5L269.6 391.7L261.3 388.2L253.3 384.1L245.6 379.7L237.9 374.9L230.4 369.6L223 363.8L216.1 357.3L209.7 350.1L204.2 342L199.9 333.2L196.8 323.9L195 314.2L194.3 304.3L194.8 294.5L195.9 284.8L197.7 275.2L200 265.6L202.7 256.1L206 246.6L210.1 237.1L215 228L221.1 219.3L228.2 211.4L236.3 204.6L245.3 198.9L255 194.3L265.1 190.9L275.5 188.5L286 186.8L296.5 185.7L307.2 185.1L318.1 185.1L329 185.8L340.1 187.4L351 190.2L361.7 194.2L371.8 199.7L381.1 206.4L389.5 214.3L396.8 223.2L403.3 232.7L408.9 242.7L413.8 253L418.1 263.7L422 274.6L425.2 285.9L427.5 297.5L428.9 309.5L428.9 321.7L427.5 333.9L424.4 345.8L419.8 357.3L413.9 368.1L406.8 378.2L398.8 387.6L390.2 396.3L381 404.5L371.4 412.2L361.2 419.4L350.4 426L339 431.7L326.9 436.3L314.2 439.6L301.2 441.2L288 441.2L275 439.5L262.2 436.3L249.8 431.9L237.9 426.5L226.3 420.2L215.2 413.2L204.4 405.6L194 397.2L184.1 387.9L175.1 377.6L167 366.3L160.4 354.1L155.3 341.1L151.8 327.5L150 313.6L149.8 299.6L150.8 285.7L152.8 271.9L155.8 258.3L159.6 244.8L164.3 231.5L170 218.4L176.8 205.6L184.9 193.5L194.4 182.3L205.2 172.2L217.3 163.5L230.3 156.4L244 150.8L258.2 146.6L272.7 143.6L287.3 141.7L302.1 140.7L317 140.6L332 141.6L347.1 143.7L362 147.2L376.6 152.3L390.7 159L403.8 167.5L415.8 177.5L426.6 188.9L436.1 201.3L444.4 214.6L451.6 228.4L457.9 242.7L463.2 257.5L467.6 272.6L471 288.2L473 304.2L473.4 320.4L472.1 336.7L468.9 352.8L463.7 368.5L456.7 383.4L448 397.5L438 410.6L427 422.8L415.1 434.1L402.4 444.6L389 454.3L374.9 463.1L359.9 470.9L344.2 477.4L327.7 482.2L310.8 485.2L293.5 486.1L276.2 484.9L259.1 481.8L242.5 476.9" fill="none" stroke="#4E1F0C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+      <path d="M291.3 302.8L290.6 302.1L290.4 301.2L290.6 300.3L291 299.5L291.3 298.7L291.4 297.8L291.1 296.9L290.5 295.6L289.7 294.1L289 292.2L288.5 290.1L288.4 288.1L288.9 286.2L289.9 284.6L291.3 283.6L292.9 283L294.6 282.7L296.3 282.6L297.9 282.4L299.6 282L301.3 281.2L303.2 280.2L305.4 279.1L307.9 278.1L310.6 277.5L313.3 277.5L315.9 278.1L318.1 279.3L320 281.1L321.4 283.2L322.6 285.5L323.7 287.7L324.8 289.9L326.1 292.1L327.7 294.4L329.5 296.8L331.3 299.6L332.9 302.6L334 305.9L334.3 309.4L334 312.7L332.8 315.9L331.1 318.8L328.9 321.4L326.6 323.8L324.2 326.1L321.8 328.5L319.5 331.1L317.1 333.8L314.4 336.7L311.4 339.5L308 341.9L304.2 343.8L300.1 344.9L295.9 345.2L291.7 344.6L287.7 343.4L283.8 341.7L280.1 339.9L276.4 337.9L272.7 336L268.8 334L264.8 331.9L260.6 329.5L256.7 326.6L253 323.1L250 319L247.8 314.5L246.5 309.6L246 304.6L246.1 299.5L246.7 294.6L247.5 289.7L248.4 284.7L249.4 279.7L250.4 274.6L251.7 269.3L253.4 263.9L255.8 258.6L259 253.7L262.9 249.3L267.6 245.7L272.7 242.9L278.2 240.9L283.9 239.5L289.6 238.5L295.4 237.7L301.2 237L307.2 236.4L313.3 236L319.7 235.9L326.2 236.5L332.7 237.9L338.9 240.3L344.7 243.6L349.9 247.8L354.5 252.8L358.4 258.2L361.7 264L364.7 269.9L367.5 276L370.2 282.2L372.7 288.6L375 295.3L376.8 302.3L377.8 309.6L377.9 317.1L376.8 324.5L374.6 331.8L371.4 338.6L367.3 344.9L362.5 350.7L357.4 356.1L352 361.3L346.3 366.3L340.5 371.2L334.3 375.9L327.6 380.3L320.4 384.1L312.7 387.1L304.6 389.1L296.3 389.8L288 389.3L279.7 387.6L271.8 385.1L264.1 381.8L256.7 378L249.5 373.9L242.4 369.5L235.3 364.7L228.4 359.3L221.9 353.4L215.8 346.7L210.6 339.2L206.5 331L203.6 322.3L201.9 313.2L201.3 304.1L201.7 294.9L202.9 285.8L204.5 276.8L206.6 267.9L209.1 259L212.1 250L215.8 241.1L220.4 232.5L225.9 224.3L232.6 216.9L240.2 210.4L248.7 205L257.8 200.8L267.3 197.6L277 195.3L286.8 193.7L296.8 192.7L306.8 192.1L317 192L327.3 192.6L337.7 194L348.1 196.5L358.2 200.3L367.7 205.4L376.5 211.7L384.4 219.2L391.4 227.5L397.4 236.5L402.7 246L407.3 255.7L411.5 265.7L415.1 276L418.2 286.7L420.5 297.7L421.9 309L422 320.5L420.7 332.1L417.9 343.4L413.5 354.3L407.9 364.5L401.2 374.1L393.6 382.9L385.4 391.2L376.8 398.9L367.6 406.3L358 413.2L347.8 419.5L337 425L325.5 429.5L313.5 432.6L301.1 434.2L288.6 434.2L276.2 432.6L264 429.6L252.3 425.4L240.9 420.2L230 414.2L219.4 407.6L209.1 400.4L199.2 392.4L189.7 383.6L181 373.9L173.3 363.2L166.9 351.6L162 339.2L158.7 326.2L157 313L156.8 299.7L157.7 286.4L159.7 273.2L162.5 260.2L166.1 247.4L170.6 234.6L175.9 222.1L182.4 209.9L190.1 198.3L199.1 187.5L209.4 177.8L220.9 169.5L233.4 162.7L246.5 157.3L260.1 153.3L273.9 150.5L287.9 148.6L302 147.7L316.3 147.6L330.6 148.4L345 150.4L359.4 153.7L373.4 158.5L386.9 164.9L399.5 173L411 182.6L421.4 193.5L430.5 205.5L438.4 218.1L445.3 231.4L451.3 245.1L456.5 259.2L460.7 273.7L464 288.7L466 304L466.5 319.6L465.3 335.3L462.2 350.8L457.2 365.8L450.5 380.1L442.2 393.6L432.6 406.2L422 417.9L410.5 428.8L398.4 438.9L385.5 448.2L371.9 456.8L357.6 464.3L342.5 470.6L326.7 475.3L310.3 478.2L293.7 479.1L277.1 478L260.7 475L244.7 470.2" fill="none" stroke="#FBD9A6" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+      <g fill="#5A2410" opacity=".55"><circle cx="150" cy="210" r="3"/><circle cx="420" cy="170" r="2.5"/><circle cx="470" cy="360" r="3"/><circle cx="200" cy="430" r="2.5"/><circle cx="340" cy="470" r="3"/><circle cx="120" cy="330" r="2"/><circle cx="460" cy="250" r="2"/></g>
+      <path d="M222.6 144Q337.5 152.8 425.7 197.5Q303 190.3 169.6 219Q325.4 227.8 454.4 272.5Q306.5 265.3 147.8 294Q320.5 302.8 466.4 347.5Q317.4 340.3 157.6 369Q305 377.8 425.7 422.5Q335.5 415.3 234.6 444" fill="none" stroke="#C9A877" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity=".35" transform="translate(3 5)"/>
+      <path d="M222.6 144Q337.5 152.8 425.7 197.5Q303 190.3 169.6 219Q325.4 227.8 454.4 272.5Q306.5 265.3 147.8 294Q320.5 302.8 466.4 347.5Q317.4 340.3 157.6 369Q305 377.8 425.7 422.5Q335.5 415.3 234.6 444" fill="none" stroke="url(#g-icing)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M222.6 144Q337.5 152.8 425.7 197.5Q303 190.3 169.6 219Q325.4 227.8 454.4 272.5Q306.5 265.3 147.8 294Q320.5 302.8 466.4 347.5Q317.4 340.3 157.6 369Q305 377.8 425.7 422.5Q335.5 415.3 234.6 444" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7" transform="translate(-2 -3)"/>
+      <path d="M370.7 294C371.1 294.9 371.5 295.9 371.8 296.8C372.1 297.8 372.3 298.7 372.5 299.7C372.7 300.7 372.8 301.6 372.8 302.6C372.9 303.6 372.9 304.6 372.9 305.5C372.9 306.5 372.8 307.5 372.8 308.5C372.7 309.5 372.7 310.4 372.6 311.4C372.6 312.4 372.5 313.4 372.4 314.4C372.4 315.4 372.4 316.5 372.3 317.5C372.2 318.5 372.2 319.6 372.1 320.6C372 321.6 371.9 322.7 371.7 323.7C371.4 324.7 371.2 325.7 370.8 326.7C370.5 327.6 370 328.5 369.5 329.4C368.9 330.3 368.3 331.1 367.5 331.8C366.7 332.5 365.9 333.2 364.9 333.8C364 334.4 362.9 334.9 361.9 335.3C360.8 335.8 359.7 336.2 358.6 336.5C357.5 336.9 356.3 337.2 355.2 337.5C354.1 337.9 353.1 338.1 352 338.4C351 338.7 350 339 349.1 339.4C348.1 339.7 347.2 340 346.4 340.4C345.5 340.7 344.7 341.1 343.9 341.5C343.1 341.9 342.3 342.3 341.6 342.6C340.8 343 340 343.4 339.3 343.8C338.5 344.2 337.7 344.5 337 344.9C336.2 345.2 335.4 345.5 334.6 345.8C333.8 346.1 333 346.3 332.2 346.6C331.4 346.8 330.6 347 329.8 347.1C328.9 347.3 328.1 347.5 327.3 347.6C326.5 347.7 325.7 347.8 324.9 347.9C324.1 348.1 323.3 348.1 322.5 348.3C321.7 348.4 320.9 348.5 320.2 348.7C319.4 348.8 318.7 349 318 349.3C317.2 349.5 316.5 349.8 315.8 350.2C315.2 350.5 314.5 351 313.8 351.5C313.1 352.1 312.5 352.7 311.8 353.5C311.2 354.2 310.5 355.1 309.8 356.1C309.2 357.1 308.5 358.2 307.7 359.5C307 360.7 306.3 362.1 305.5 363.5C304.7 364.9 303.8 366.4 302.9 367.9C302 369.4 301 371 300 372.4C299 373.9 297.9 375.3 296.8 376.6C295.6 377.8 294.4 379 293.2 379.9C292 380.8 290.8 381.6 289.6 382C288.4 382.5 287.1 382.7 285.9 382.7C284.8 382.7 283.6 382.4 282.5 381.9C281.4 381.4 280.4 380.6 279.4 379.8C278.4 378.9 277.5 377.8 276.7 376.7C275.8 375.5 275.1 374.2 274.4 372.9C273.6 371.6 273 370.3 272.4 368.9C271.8 367.6 271.2 366.2 270.7 364.8C270.1 363.5 269.6 362.2 269.2 360.9C268.7 359.6 268.3 358.3 267.9 357.1C267.4 355.9 267.1 354.7 266.7 353.5C266.3 352.3 266 351.2 265.6 350.1C265.3 349 264.9 348 264.6 347C264.3 345.9 264 344.9 263.7 344C263.4 343.1 263 342.2 262.7 341.3C262.4 340.4 262.1 339.6 261.7 338.8C261.4 338.1 261 337.3 260.6 336.6C260.2 335.9 259.8 335.3 259.3 334.7C258.9 334 258.4 333.5 257.9 332.9C257.4 332.4 256.8 331.9 256.3 331.4C255.7 330.9 255 330.4 254.4 330C253.7 329.5 253 329.1 252.3 328.7C251.5 328.3 250.7 327.9 249.9 327.5C249.1 327.1 248.2 326.7 247.3 326.3C246.4 325.9 245.4 325.5 244.4 325.1C243.4 324.7 242.4 324.3 241.3 323.9C240.3 323.5 239.2 323 238.1 322.5C237.1 322 236 321.5 234.9 320.9C233.9 320.4 232.9 319.8 232 319.1C231.1 318.4 230.3 317.7 229.6 316.9C228.9 316.1 228.2 315.3 227.8 314.4C227.4 313.5 227.1 312.5 226.9 311.5C226.8 310.6 226.8 309.6 226.9 308.5C227 307.5 227.3 306.5 227.6 305.5C228 304.4 228.4 303.4 228.9 302.4C229.4 301.4 229.9 300.4 230.4 299.5C230.9 298.5 231.4 297.6 231.8 296.7C232.3 295.8 232.7 294.9 233 294C233.3 293.1 233.6 292.3 233.8 291.4C234 290.5 234.1 289.7 234.2 288.8C234.2 288 234.2 287.1 234.1 286.2C234.1 285.3 234 284.4 233.8 283.5C233.7 282.6 233.6 281.7 233.4 280.8C233.3 279.8 233.1 278.9 233 277.9C232.8 276.9 232.7 276 232.6 275C232.6 274 232.5 273 232.5 272.1C232.5 271.1 232.6 270.1 232.7 269.2C232.9 268.2 233 267.3 233.3 266.4C233.6 265.5 233.9 264.6 234.3 263.7C234.7 262.9 235.2 262 235.7 261.2C236.2 260.4 236.8 259.7 237.4 259C238.1 258.3 238.8 257.6 239.5 256.9C240.2 256.3 241 255.7 241.7 255.1C242.5 254.5 243.3 253.9 244 253.3C244.8 252.7 245.5 252.2 246.2 251.6C246.9 251 247.6 250.4 248.2 249.8C248.9 249.2 249.5 248.5 250 247.8C250.6 247.1 251.1 246.4 251.6 245.6C252.1 244.9 252.6 244.1 253.1 243.3C253.6 242.5 254.1 241.7 254.7 240.9C255.2 240.2 255.8 239.4 256.5 238.8C257.1 238.1 257.8 237.5 258.6 237C259.3 236.4 260.1 236 261 235.7C261.9 235.3 262.8 235.1 263.8 234.9C264.7 234.7 265.7 234.6 266.7 234.5C267.7 234.4 268.7 234.4 269.6 234.4C270.6 234.3 271.5 234.3 272.4 234.2C273.4 234.1 274.2 234.1 275.1 233.9C276 233.7 276.8 233.5 277.6 233.3C278.4 233 279.2 232.7 280 232.3C280.7 232 281.5 231.5 282.3 231.1C283 230.7 283.8 230.2 284.6 229.8C285.4 229.4 286.2 228.9 287 228.5C287.8 228.1 288.6 227.7 289.4 227.3C290.3 227 291.1 226.7 292 226.4C292.9 226.2 293.8 226 294.6 225.9C295.5 225.7 296.4 225.6 297.3 225.6C298.2 225.6 299.1 225.6 300 225.6C300.9 225.7 301.8 225.8 302.7 226C303.6 226.1 304.4 226.3 305.3 226.5C306.2 226.7 307.1 226.9 307.9 227.1C308.8 227.3 309.6 227.5 310.5 227.7C311.4 227.9 312.2 228.1 313.1 228.3C313.9 228.5 314.8 228.6 315.7 228.7C316.6 228.7 317.5 228.8 318.4 228.8C319.3 228.8 320.3 228.7 321.3 228.6C322.3 228.4 323.3 228.2 324.3 228C325.4 227.8 326.5 227.5 327.6 227.3C328.8 227 329.9 226.7 331.1 226.5C332.3 226.2 333.5 226 334.7 225.9C335.9 225.7 337.1 225.6 338.3 225.7C339.4 225.7 340.5 225.9 341.6 226.2C342.6 226.5 343.6 226.9 344.4 227.5C345.3 228.1 346.1 228.8 346.7 229.7C347.4 230.6 347.9 231.6 348.3 232.7C348.8 233.8 349.1 235 349.3 236.3C349.6 237.5 349.7 238.9 349.7 240.2C349.8 241.5 349.8 242.9 349.8 244.2C349.7 245.6 349.6 246.9 349.5 248.2C349.4 249.5 349.3 250.8 349.1 252C349 253.3 348.9 254.4 348.7 255.6C348.6 256.7 348.5 257.8 348.4 258.8C348.3 259.9 348.2 260.9 348.2 261.8C348.1 262.7 348.1 263.6 348.1 264.5C348.2 265.4 348.2 266.2 348.3 266.9C348.4 267.7 348.6 268.5 348.8 269.2C349 269.9 349.2 270.5 349.5 271.2C349.8 271.8 350.2 272.4 350.6 273C351 273.7 351.5 274.2 352 274.8C352.5 275.4 353.1 276 353.8 276.5C354.4 277.1 355.1 277.7 355.8 278.3C356.5 278.9 357.3 279.4 358 280.1C358.8 280.7 359.6 281.3 360.4 282C361.2 282.6 362.1 283.3 362.9 284C363.6 284.8 364.4 285.5 365.2 286.3C365.9 287.1 366.7 287.9 367.3 288.7C368 289.5 368.6 290.4 369.2 291.3C369.8 292.2 370.3 293.1 370.7 294Z" fill="url(#g-icing)" stroke="#E6CE9E" stroke-width="2"/>
+      <g fill="#fff" opacity=".85"><ellipse cx="278" cy="268" rx="24" ry="8" transform="rotate(-28 278 268)"/><ellipse cx="258" cy="292" rx="6" ry="4"/></g>
+    </symbol>
+    <symbol id="seal" viewBox="0 0 200 200">
+      <path id="seal-c" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0" fill="none"/>
+      <circle cx="100" cy="100" r="96" fill="#E1ACB5" stroke="#28110C" stroke-width="4"/>
+      <circle cx="100" cy="100" r="52" fill="#5E0B13" stroke="#28110C" stroke-width="3"/>
+      <text font-family="Poppins,system-ui,sans-serif" font-weight="700" font-size="15" letter-spacing="3.2" fill="#28110C"><textPath href="#seal-c">THE LITTLE TREAT BRAND ✦ A LITTLE SOMETHING GOOD ✦</textPath></text>
+      <text x="100" y="114" text-anchor="middle" font-family="'Lilita One',system-ui,sans-serif" font-size="42" fill="#FDF2D2">J'S</text>
+    </symbol>
+    <symbol id="box" viewBox="0 0 600 600">
+      <ellipse cx="300" cy="520" rx="220" ry="26" fill="#28110C" opacity=".22"/>
+      <path d="M110 250 L300 320 L300 520 L110 450Z" fill="#5E0B13" stroke="#28110C" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M300 320 L490 250 L490 450 L300 520Z" fill="#4A0910" stroke="#28110C" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M110 250 L300 180 L490 250 L300 320Z" fill="#E1ACB5" stroke="#28110C" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M160 232 L300 180 L440 232" fill="none" stroke="#28110C" stroke-width="3" stroke-dasharray="10 8" opacity=".5"/>
+      <g transform="translate(300 250) scale(1 .58) rotate(-45)"><circle r="62" fill="#FDF2D2" stroke="#28110C" stroke-width="5"/><text y="16" text-anchor="middle" font-family="'Lilita One',system-ui,sans-serif" font-size="46" fill="#5E0B13">J'S</text></g>
+      <text x="205" y="410" transform="skewY(20) translate(0 -75)" text-anchor="middle" font-family="'Lilita One',system-ui,sans-serif" font-size="23" fill="#FDF2D2">LITTLE TREATS.</text>
+      <text x="205" y="446" transform="skewY(20) translate(0 -75)" text-anchor="middle" font-family="'Lilita One',system-ui,sans-serif" font-size="23" fill="#E1ACB5">BIG MOODS.</text>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 40 40"><path d="M20 34C9 26 4 20 5 13c1-6 9-8 13-3l2 3 2-3c4-5 12-3 13 3 1 7-4 13-15 21z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12.1a1 1 0 0 1-1 .9H7.2a1 1 0 0 1-1-.9L5 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 10V6a3 3 0 0 1 6 0v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.5.7c-.1.2-.2.4 0 .6.4.7 1.5 2.1 3 2.7.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.3.4.5 0 .5-.2 1.4-1.2 1.9-.9.5-2.6.3-4.6-.9-2.4-1.5-3.7-3.6-4-4.4-.4-1.1-.2-2.2.3-2.8z" fill="currentColor"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="logo" href="#home" aria-label="J'S — home"><span class="mark">J'S</span><span class="desc">The little treat brand</span></a>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#rolls" data-nav="rolls">The Rolls</a>
+    <a href="#story" data-nav="story">Our Story</a>
+    <a href="#order" class="btn" data-nav="order">Order Now</a>
+  </nav>
+  <button class="cartbtn" id="cartBtn" type="button" aria-label="Open your order, 0 items" aria-controls="drawer"><svg aria-hidden="true"><use href="#i-bag"/></svg><span class="count" id="cartCount" data-n="0" aria-hidden="true">0</span></button>
+  <button class="menubtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ HOME ============ -->
+<section class="view" data-view="home" aria-label="Home">
+  <div class="band hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="sticker cream eyebrow">J'S — THE LITTLE TREAT BRAND</span>
+        <h1>LITTLE TREATS. <span class="pk">BIG MOODS.</span></h1>
+        <p class="tag">A LITTLE SOMETHING GOOD.</p>
+        <div class="ctas">
+          <a class="btn cream big" href="#rolls">Explore the Rolls</a>
+          <a class="btn big" href="#order">Order Now</a>
+        </div>
+        <p class="ar ar-display" lang="ar" dir="rtl">مش لازم تكون مناسبة. ممكن تبقى رولز.</p>
+      </div>
+      <div class="hero-pic reveal" data-img="hero">
+        <div class="paper checker"></div>
+        <div class="imgslot"></div>
+        <svg class="seal spin" aria-hidden="true"><use href="#seal"/></svg>
+      </div>
+    </div>
+    <div class="hero-foot marquee" aria-hidden="true">
+      <div class="track"><span>LITTLE TREATS. BIG MOODS.</span><span>A LITTLE SOMETHING GOOD.</span><span>CLASSIC CINNAMON ROLL</span><span>ALEXANDRIA</span><span>LITTLE TREATS. BIG MOODS.</span><span>A LITTLE SOMETHING GOOD.</span><span>CLASSIC CINNAMON ROLL</span><span>ALEXANDRIA</span></div>
+    </div>
+  </div>
+
+  <div class="band cream" id="signature">
+    <div class="wrap" id="signatureSlot"></div>
+  </div>
+
+  <div class="checker-strip" aria-hidden="true"></div>
+
+  <div class="band blush">
+    <div class="wrap story reveal">
+      <div>
+        <h2>A LITTLE SOMETHING GOOD.</h2>
+        <p class="lede" style="color:var(--esp);margin-top:22px">J'S believes little moments deserve little treats. A Tuesday. A study break. A "just because" with your friends. A treat doesn't need a special occasion — it just needs to be good.</p>
+        <div class="moments" aria-label="Little moments">
+          <span class="sticker">study breaks</span><span class="sticker cream" style="transform:rotate(2deg)">group chats</span><span class="sticker bur" style="transform:rotate(-1deg)">just because</span><span class="sticker cream" style="transform:rotate(3deg)">long days</span>
+        </div>
+      </div>
+      <div>
+        <p class="ar-big ar-display" lang="ar" dir="rtl">الحاجات الصغيرة تستاهل.</p>
+        <p class="ar-sub" lang="ar" dir="rtl">مش لازم تكون مناسبة. ممكن تبقى رولز.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="band bur" id="jana">
+    <div class="wrap founder reveal" data-founder></div>
+  </div>
+
+  <div class="band esp" id="first-drop" style="overflow:hidden">
+    <div class="wrap drop reveal">
+      <div class="ticket blush big-ticket">
+        <div class="bt-top"><span>Admit one</span><span>Alexandria</span></div>
+        <h2>THE FIRST DROP</h2>
+        <div class="perf"></div>
+        <div class="bt-row"><svg viewBox="0 0 600 600" aria-hidden="true"><use href="#roll" width="600" height="600"/></svg><p>Classic Cinnamon Roll<br>Ordered on WhatsApp. Paid with InstaPay after J'S confirms.</p></div>
+      </div>
+      <div class="drop-copy">
+        <h3>The roll that starts it all.</h3>
+        <p>One signature roll to kick off J'S. Send your request on WhatsApp, J'S confirms the details, and your little something good is on its way.</p>
+        <div id="dropFacts"></div>
+        <div class="buyrow"><a class="btn big" href="#order">Order the first drop</a><a class="btn ghost" href="#classic-cinnamon-roll">See the roll</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ROLLS ============ -->
+<section class="view" data-view="rolls" aria-labelledby="rollsTitle">
+  <div class="band bur pagehead">
+    <div class="wrap">
+      <span class="sticker cream eyebrow">The menu</span>
+      <h1 id="rollsTitle">THE ROLLS</h1>
+      <p>Starting with the one that started it all. Pick your quantity, send your request on WhatsApp, and J'S takes it from there.</p>
+    </div>
+    <svg class="seal spin" aria-hidden="true"><use href="#seal"/></svg>
+  </div>
+  <div class="band cream">
+    <div class="wrap" id="menuSlot"></div>
+  </div>
+  <div class="checker-strip cb" aria-hidden="true"></div>
+  <div class="band blush">
+    <div class="wrap">
+      <h2 class="sec-title" style="color:var(--bur)">COMING LATER</h2>
+      <p class="lede" style="color:var(--esp)">These aren't on the menu yet, so they can't be ordered. Watch this space.</p>
+      <div class="later" id="laterSlot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT DETAILS ============ -->
+<section class="view" data-view="product" aria-label="Product details">
+  <div class="band cream">
+    <div class="wrap" id="detailSlot"></div>
+  </div>
+</section>
+
+<!-- ============ OUR STORY ============ -->
+<section class="view" data-view="story" aria-labelledby="storyTitle">
+  <div class="band bur pagehead">
+    <div class="wrap">
+      <span class="sticker cream eyebrow">Our story</span>
+      <h1 id="storyTitle">NOT A BAKERY. A MOOD.</h1>
+      <p>J'S is a little-treat brand for everyday moments — playful, stylish and made to be shared. It starts with one roll and grows from there.</p>
+    </div>
+    <svg class="seal spin" aria-hidden="true"><use href="#seal"/></svg>
+  </div>
+  <div class="band cream">
+    <div class="wrap story">
+      <div class="reveal">
+        <h2>A LITTLE SOMETHING GOOD.</h2>
+        <p class="lede" style="margin-top:22px">Ordinary days deserve something special too. J'S is here for the in-between moments — the late study session, the friend who needs cheering up, the Thursday that needed a win. No occasion required.</p>
+        <p class="lede">We start with the Classic Cinnamon Roll and plan to grow into more desserts, snacks, sharing boxes and celebration treats — one little treat at a time.</p>
+      </div>
+      <div class="reveal">
+        <p class="ar-big ar-display" lang="ar" dir="rtl">مش لازم تكون مناسبة.<br>ممكن تبقى رولز.</p>
+        <p class="ar-sub" lang="ar" dir="rtl">الحاجات الصغيرة تستاهل.</p>
+      </div>
+    </div>
+  </div>
+  <div class="band blush">
+    <div class="wrap reveal">
+      <h2 class="sec-title" style="color:var(--bur)">WHAT J'S FEELS LIKE</h2>
+      <div class="moments" style="gap:14px">
+        <span class="sticker" style="font-size:18px">Cool</span><span class="sticker cream" style="font-size:18px;transform:rotate(3deg)">Playful</span><span class="sticker bur" style="font-size:18px">Stylish</span><span class="sticker cream" style="font-size:18px;transform:rotate(-5deg)">Social</span><span class="sticker" style="font-size:18px;transform:rotate(2deg)">Effortless</span><span class="sticker bur" style="font-size:18px;transform:rotate(4deg)">Warm</span><span class="sticker cream" style="font-size:18px">Confident</span>
+      </div>
+    </div>
+  </div>
+  <div class="band bur">
+    <div class="wrap founder reveal" data-founder></div>
+  </div>
+  <div class="band cream">
+    <div class="wrap drop reveal">
+      <div data-img="packaging" class="pd-main" style="background:var(--blush)"><div class="imgslot"></div></div>
+      <div>
+        <h2 class="sec-title" style="color:var(--bur)">WHAT'S NEXT</h2>
+        <p class="lede">Sharing boxes, new flavours and celebration treats are on the list. They'll show up on the menu when they're ready to order — not before.</p>
+        <div class="buyrow"><a class="btn bur big" href="#rolls">See the Rolls</a><a class="btn big" href="#order">Order Now</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER & FAQ ============ -->
+<section class="view" data-view="order" aria-labelledby="orderTitle">
+  <div class="band bur pagehead">
+    <div class="wrap">
+      <span class="sticker cream eyebrow">Order &amp; FAQ</span>
+      <h1 id="orderTitle">ORDER NOW</h1>
+      <p>Build your order here, then send it to J'S on WhatsApp. Your order is a request until J'S confirms it with you.</p>
+    </div>
+    <svg class="seal spin" aria-hidden="true"><use href="#seal"/></svg>
+  </div>
+
+  <div class="band blush" style="padding-block:36px">
+    <ol class="wrap steps" aria-label="How ordering works">
+      <li><b>Pick your rolls</b><span>Choose a quantity and add to your order.</span></li>
+      <li><b>Send on WhatsApp</b><span>Fill in your details and continue on WhatsApp.</span></li>
+      <li><b>J'S confirms</b><span>Availability, delivery fee and final total.</span></li>
+      <li><b>Pay with InstaPay</b><span>Transfer, send the screenshot, done.</span></li>
+    </ol>
+  </div>
+
+  <div class="band cream on-cream" id="checkout-area">
+    <div class="wrap checkout">
+      <div>
+        <div class="panel" id="formPanel">
+          <h2>Your details</h2>
+          <p class="note">Fields marked required are needed so J'S can confirm your delivery.</p>
+          <form id="checkout" novalidate>
+            <fieldset>
+              <legend class="sr">Contact and delivery details</legend>
+              <div class="row2">
+                <div class="field"><label for="f-name">Full name (required)</label><input id="f-name" name="name" autocomplete="name" required maxlength="80" aria-describedby="e-name"><p class="err" id="e-name"></p></div>
+                <div class="field"><label for="f-phone">Phone number (required)</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01xxxxxxxxx" required maxlength="20" aria-describedby="h-phone e-phone"><p class="hint" id="h-phone">Egyptian mobile, ideally your WhatsApp number.</p><p class="err" id="e-phone"></p></div>
+              </div>
+              <div class="row2">
+                <div class="field"><label for="f-city">Delivery city</label><input id="f-city" name="city" value="Alexandria" readonly aria-describedby="h-city"><p class="hint" id="h-city">J'S delivers in Alexandria.</p></div>
+                <div class="field" id="areaField"><label for="f-area">Area / district (required)</label><input id="f-area" name="area" autocomplete="address-level3" required maxlength="80" placeholder="Your area in Alexandria" aria-describedby="e-area"><p class="err" id="e-area"></p></div>
+              </div>
+              <div class="field"><label for="f-address">Full address (required)</label><textarea id="f-address" name="address" autocomplete="street-address" required maxlength="300" placeholder="Street, building, floor, apartment, landmark" aria-describedby="e-address"></textarea><p class="err" id="e-address"></p></div>
+              <div class="field"><label for="f-notes">Order notes <span class="opt">(optional)</span></label><textarea id="f-notes" name="notes" maxlength="300" placeholder="Anything J'S should know?" aria-describedby="h-notes"></textarea><p class="hint" id="h-notes">Allergies? Please mention them here and ask J'S before ordering.</p></div>
+            </fieldset>
+            <p class="formerr" id="formErr" role="alert"></p>
+            <div class="buyrow" style="margin-top:20px"><button class="btn bur big" type="submit">Review my order</button></div>
+          </form>
+        </div>
+
+        <div class="panel" id="reviewPanel" hidden tabindex="-1" aria-labelledby="reviewTitle">
+          <h2 id="reviewTitle">Check your request</h2>
+          <p>This is exactly what will be sent to J'S on WhatsApp. Nothing is confirmed or charged yet.</p>
+          <div class="msgprev" id="msgPreview"></div>
+          <div class="buyrow">
+            <a class="btn wa big" id="waLink" href="https://wa.me/201284184425" target="_blank" rel="noopener"><svg width="22" height="22" aria-hidden="true"><use href="#i-wa"/></svg>CONTINUE ON WHATSAPP</a>
+            <button class="btn cream" type="button" id="editBtn">Edit details</button>
+          </div>
+          <div class="callout sentnote" id="sentNote" hidden role="status">
+            <svg aria-hidden="true"><use href="#i-info"/></svg>
+            <div><p><b>WhatsApp should now be open with your request.</b> Press send there. Your order is not confirmed until J'S replies with availability, the delivery fee and your final total.</p>
+            <p style="margin-top:8px">Didn't open? Message <a href="https://wa.me/201284184425" target="_blank" rel="noopener" data-wa-plain>01284184425</a> on WhatsApp and paste your request. <button class="linkbtn" type="button" id="copyMsg">Copy request text</button> <button class="linkbtn" type="button" id="newOrder">Start a new order</button></p></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="summary" aria-labelledby="sumTitle">
+        <div class="panel">
+          <h2 id="sumTitle">Your order</h2>
+          <div id="summarySlot"></div>
+        </div>
+        <div class="callout cream" style="margin-top:18px" id="deliveryCallout"><svg aria-hidden="true"><use href="#i-info"/></svg><p data-delivery-text>Delivery is available in Alexandria. Final delivery fee and availability will be confirmed on WhatsApp.</p></div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="band bur" id="payment">
+    <div class="wrap pay">
+      <div>
+        <span class="sticker cream eyebrow">Payment</span>
+        <h2 class="sec-title">PAY WITH INSTAPAY</h2>
+        <p>J'S takes InstaPay transfers, checked by hand. There's no payment on this website and nothing is charged automatically.</p>
+        <div class="callout" style="margin-top:20px"><svg aria-hidden="true"><use href="#i-info"/></svg><p>Only transfer after J'S has confirmed your order and your final amount on WhatsApp.</p></div>
+      </div>
+      <div>
+        <ol>
+          <li><span>Confirm your order with J'S on WhatsApp.</span></li>
+          <li><span>Receive your final amount and payment instructions.</span></li>
+          <li><span>Transfer through InstaPay to the confirmed J'S alias.</span></li>
+          <li><span>Send your transfer screenshot on WhatsApp.</span></li>
+          <li><span>J'S checks the transfer by hand and confirms your order.</span></li>
+        </ol>
+        <div id="payReveal" style="margin-top:20px">
+          <button class="btn wrap-ok" type="button" id="revealPay" aria-expanded="false" aria-controls="payDetails">J'S confirmed my total — show InstaPay details</button>
+          <div id="payDetails" hidden>
+            <div class="alias"><div><small>InstaPay number / alias</small><br><b id="aliasText">01284184425</b></div><button class="btn cream" type="button" id="copyAlias">Copy</button></div>
+            <p class="note" id="copyState" role="status"></p>
+            <p class="note">After transferring, send the screenshot to J'S on WhatsApp. Your order is confirmed once J'S has checked it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band cream on-cream" id="faq">
+    <div class="wrap faqgrid">
+      <div><h2 class="sec-title" style="color:var(--bur)">FAQ</h2><p class="lede">Still wondering? Message J'S on WhatsApp at <a href="https://wa.me/201284184425" target="_blank" rel="noopener">01284184425</a>.</p></div>
+      <div class="faq" id="faqSlot"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="checker-strip cb" aria-hidden="true"></div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="mark">J'S</div>
+        <p class="desc">The little treat brand</p>
+        <p style="max-width:34ch">Little treats. Big moods. A little something good for ordinary days — from Alexandria.</p>
+        <p lang="ar" dir="rtl" class="ar-display" style="font-size:22px;color:var(--blush);text-align:start">الحاجات الصغيرة تستاهل.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul><li><a href="#home">Home</a></li><li><a href="#rolls">The Rolls</a></li><li><a href="#classic-cinnamon-roll">Classic Cinnamon Roll</a></li><li><a href="#story">Our Story</a></li><li><a href="#order">Order Now</a></li></ul>
+      </div>
+      <div>
+        <h3>Help</h3>
+        <ul><li><a href="#faq">FAQ</a></li><li><a href="#payment">InstaPay payment</a></li><li><a href="#checkout-area">Delivery in Alexandria</a></li></ul>
+      </div>
+      <div>
+        <h3>Say hi</h3>
+        <ul>
+          <li><a href="https://wa.me/201284184425" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span><span>WhatsApp<br><small>01284184425</small></span></a></li>
+          <li id="igSlot"><span class="soon"><span class="ico"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><span>Instagram: j's<small>Link coming soon</small></span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal"><span>© <span id="year">2026</span> J'S — The Little Treat Brand. Alexandria, Egypt.</span><span>Prices in EGP. Orders are requests until confirmed by J'S on WhatsApp.</span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <div class="drawer-head"><h2 id="drawerTitle">Your order</h2><button class="xbtn" type="button" id="drawerClose" aria-label="Close your order">×</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><p id="toastMsg"></p><button class="btn" type="button" id="toastView">View order</button></div>
+
+<details class="setup" id="setup" hidden><summary id="setupSum">Owner setup</summary><div class="box" id="setupBox"></div></details>
+
+<!-- =====================================================================
+     OWNER SETTINGS — edit the values below. Anything left as null shows a
+     safe "to be confirmed on WhatsApp" message instead of a made-up value.
+     ===================================================================== -->
+<script>
+window.JS_CONFIG = {
+  brand: { name: "J'S", descriptor: "THE LITTLE TREAT BRAND", tagline: "A LITTLE SOMETHING GOOD.", campaign: "LITTLE TREATS. BIG MOODS." },
+  contact: { whatsappIntl: "201284184425", whatsappDisplay: "01284184425" },
+  payment: { method: "InstaPay", instapayAlias: "01284184425" },
+  social: { instagramHandle: "j's", instagramUrl: null },          // e.g. "https://www.instagram.com/<exact-handle>/" — only once confirmed
+  delivery: {
+    city: "Alexandria",
+    fee: null,            // number in EGP, e.g. 40. null = "To be confirmed by J'S"
+    areas: [],            // e.g. ["Smouha", "Sporting"]. Empty = customer types their area
+    eta: null,            // e.g. "Same day for orders before 5 PM" — only if true
+    pickup: null          // e.g. "Pickup available from ..." — null = not offered on the site
+  },
+  launch: {               // The First Drop — leave null unless real
+    deadline: null,       // ISO date, e.g. "2026-12-05T20:00:00+02:00" → shows a countdown
+    limitedQuantity: null // number, e.g. 60 → shows "Only 60 rolls in this drop"
+  },
+  founder: { name: "Jana", photo: null, bio: null },               // photo: image URL or data: URI; bio: Jana's own words
+  images: {               // real photos replace the illustrations automatically
+    hero: null,           // hero-classic-roll.jpg
+    texture: null,        // texture-cinnamon-closeup.jpg
+    icing: null,          // detail-icing-dough.jpg
+    packaging: null       // packaging-box-mockup.jpg
+  },
+  order: { maxQtyPerItem: 50 },
+  showSetupNotice: true   // set to false when everything above is filled in
+};
+
+window.JS_PRODUCTS = [
+  {
+    id: "classic-roll",
+    slug: "classic-cinnamon-roll",
+    name: "Classic Cinnamon Roll",
+    description: "The signature. A soft cinnamon swirl finished with icing — the roll that starts J'S.",
+    image: null,          // product-classic-roll.jpg
+    imageAlt: "Classic Cinnamon Roll from J'S",
+    price: null,          // selling price in EGP, e.g. 85. null = "Price confirmed on WhatsApp"
+    category: "rolls",
+    availability: "available", // "available" | "sold-out" | "coming-soon"
+    featured: true,
+    details: { ingredients: null, allergens: null, size: null }
+  }
+];
+
+window.JS_CATEGORIES = [
+  { id: "rolls", name: "The Rolls", status: "live" },
+  { id: "boxes", name: "The Boxes", status: "later", blurb: "Sharing boxes for the group chat." },
+  { id: "celebration", name: "Celebration Treats", status: "later", blurb: "For birthdays, wins and everything in between." },
+  { id: "more", name: "More Little Treats", status: "later", blurb: "New desserts and snacks, when they're ready." }
+];
+</script>
+
+<script>
+{
+const C = window.JS_CONFIG, P = window.JS_PRODUCTS, CATS = window.JS_CATEGORIES;
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const isNum = v => typeof v === 'number' && isFinite(v) && v >= 0;
+const fmt = n => n.toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' EGP';
+const MAX = Math.max(1, C.order?.maxQtyPerItem || 50);
+const WA = 'https://wa.me/' + C.contact.whatsappIntl;
+const TBC = "To be confirmed by J'S";
+const byId = id => P.find(p => p.id === id);
+const canBuy = p => p && p.availability === 'available';
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+
+/* ---------- Pictures ---------- */
+function rollSvg(cls = 'roll') { return `<svg class="${cls}" viewBox="0 0 600 600" role="img" aria-label="Illustration of a Classic Cinnamon Roll"><use href="#roll" width="600" height="600"/></svg>`; }
+function pic(src, alt, fallback, file) {
+  if (src) return `<img class="photo" src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+  return fallback + (file ? `<span class="ph">Illustration — real photo: ${esc(file)}</span>` : '');
+}
+function productPic(p, cls = 'roll', label = true) {
+  return pic(p.image, p.imageAlt || p.name, rollSvg(cls), label ? 'product-' + p.slug + '.jpg' : '');
+}
+
+/* ---------- Cart ---------- */
+let cart = sanitize(store.get('js-cart-v1'));
+function sanitize(raw) {
+  if (!Array.isArray(raw)) return [];
+  const out = [];
+  for (const it of raw) {
+    const p = byId(it && it.id), q = Math.floor(Number(it && it.qty));
+    if (canBuy(p) && q >= 1 && !out.find(o => o.id === p.id)) out.push({ id: p.id, qty: Math.min(q, MAX) });
+  }
+  return out;
+}
+const clampQ = v => { const n = Math.floor(Number(v)); return isFinite(n) ? Math.min(MAX, Math.max(1, n)) : 1; };
+function save() { store.set('js-cart-v1', cart); renderCart(); }
+function addItem(id, qty) {
+  const p = byId(id); if (!canBuy(p)) return false;
+  const line = cart.find(l => l.id === id), q = clampQ(qty);
+  if (line) line.qty = Math.min(MAX, line.qty + q); else cart.push({ id, qty: q });
+  save(); return true;
+}
+function setQty(id, qty) { const l = cart.find(x => x.id === id); if (l) { l.qty = clampQ(qty); save(); } }
+function removeItem(id) { cart = cart.filter(l => l.id !== id); save(); }
+function itemCount() { return cart.reduce((s, l) => s + l.qty, 0); }
+function totals() {
+  let sum = 0, priced = true;
+  for (const l of cart) { const p = byId(l.id); if (isNum(p.price)) sum += p.price * l.qty; else priced = false; }
+  const fee = isNum(C.delivery.fee) ? C.delivery.fee : null;
+  return { subtotal: priced ? sum : null, fee, total: priced && fee !== null ? sum + fee : null };
+}
+const priceText = p => isNum(p.price) ? fmt(p.price) : 'Price confirmed on WhatsApp';
+const availText = { 'available': 'Available to order', 'sold-out': 'Sold out for now', 'coming-soon': 'Coming soon' };
+
+/* ---------- Buy block ---------- */
+function buyBlock(p, ctx) {
+  const avail = `<span class="avail ${esc(p.availability)}">${availText[p.availability] || 'Unavailable'}</span>`;
+  const price = `<span class="price${isNum(p.price) ? '' : ' tbc'}">${esc(priceText(p))}</span>`;
+  if (!canBuy(p)) return `<div class="buy"><div class="pricerow">${price}${avail}</div><p class="note">Not available to order right now.</p></div>`;
+  const qid = `q-${ctx}-${p.id}`;
+  return `<div class="buy" data-pid="${esc(p.id)}">
+    <div class="pricerow">${price}${avail}</div>
+    <div class="buyrow">
+      <div class="qty" role="group" aria-label="Quantity">
+        <button type="button" data-act="dec" aria-label="Decrease quantity">−</button>
+        <input id="${qid}" type="number" inputmode="numeric" min="1" max="${MAX}" step="1" value="1" aria-label="Quantity of ${esc(p.name)}">
+        <button type="button" data-act="inc" aria-label="Increase quantity">+</button>
+      </div>
+      <button type="button" class="btn bur big" data-act="add">Add to Order</button>
+    </div>
+    ${isNum(p.price) ? '' : '<p class="note">J\'S confirms the price with you before anything is paid.</p>'}
+  </div>`;
+}
+
+/* ---------- Sections ---------- */
+const featured = P.find(p => p.featured && p.availability !== 'hidden') || P[0];
+function renderSignature() {
+  const p = featured;
+  $('#signatureSlot').innerHTML = `<div class="sig reveal">
+    <div class="sig-pic"><div class="board checker"></div>${productPic(p)}<span class="sticker bur">The signature</span></div>
+    <div>
+      <span class="sticker eyebrow">Now on the menu</span>
+      <h2>${esc(p.name.toUpperCase())}</h2>
+      <p class="lede" style="margin-top:16px">${esc(p.description)}</p>
+      <ul class="chips"><li>Made for little moments</li><li>Ordered on WhatsApp</li><li>Delivered in Alexandria</li></ul>
+      ${buyBlock(p, 'sig')}
+      <p style="margin-top:16px"><a href="#${esc(p.slug)}" style="font-weight:600;color:var(--bur)">See roll details</a></p>
+    </div></div>`;
+}
+function renderMenu() {
+  const live = P.filter(p => p.availability !== 'hidden' && CATS.find(c => c.id === p.category && c.status === 'live'));
+  $('#menuSlot').innerHTML = live.map(p => `<article class="menu-card reveal">
+    <div class="pic"><div class="checker"></div>${productPic(p)}${p.featured ? '<span class="sticker cream">Signature</span>' : ''}</div>
+    <div class="body">
+      <h2><a href="#${esc(p.slug)}">${esc(p.name)}</a></h2>
+      <p class="lede" style="margin-top:12px">${esc(p.description)}</p>
+      ${buyBlock(p, 'menu')}
+      <p style="margin-top:14px"><a href="#${esc(p.slug)}" style="font-weight:600;color:var(--bur)">Details</a></p>
+    </div></article>`).join('');
+  $('#laterSlot').innerHTML = CATS.filter(c => c.status !== 'live').map(c => `<div class="ticket reveal"><span class="lbl">Coming later</span><h3>${esc(c.name)}</h3><p>${esc(c.blurb || '')}</p></div>`).join('');
+}
+function renderDetail(p) {
+  const d = p.details || {};
+  const fact = (k, v, f) => `<li><b>${k}</b><span>${v ? esc(v) : f}</span></li>`;
+  const thumb = (src, alt, svg, file) => `<div class="thumb">${pic(src, alt, svg, '')}${src ? '' : `<span class="ph">${esc(file)}</span>`}</div>`;
+  $('#detailSlot').innerHTML = `<nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#rolls">The Rolls</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.name)}</span></nav>
+  <div class="pd" style="margin-top:22px">
+    <div>
+      <div class="pd-main"><div class="checker"></div>${productPic(p)}</div>
+      <div class="thumbs">
+        ${thumb(C.images.texture, 'Cinnamon swirl close-up', '<svg viewBox="150 150 300 300" aria-hidden="true"><use href="#roll" width="600" height="600"/></svg>', 'texture-cinnamon-closeup.jpg')}
+        ${thumb(C.images.icing, 'Icing and dough detail', '<svg viewBox="200 170 200 200" aria-hidden="true"><use href="#roll" width="600" height="600"/></svg>', 'detail-icing-dough.jpg')}
+        ${thumb(C.images.packaging, 'J\'S packaging', '<svg viewBox="60 120 480 440" aria-hidden="true"><use href="#box" width="600" height="600"/></svg>', 'packaging-box-mockup.jpg')}
+      </div>
+    </div>
+    <div class="pd-sticky">
+      ${p.featured ? '<span class="sticker">The signature</span>' : ''}
+      <h1>${esc(p.name.toUpperCase())}</h1>
+      <p class="lede">${esc(p.description)}</p>
+      ${buyBlock(p, 'pd')}
+      <ul class="facts-list">
+        ${fact('Ingredients', d.ingredients, 'Listed here soon — ask J\'S on WhatsApp.')}
+        ${fact('Allergens', d.allergens, 'Have an allergy? Ask J\'S on WhatsApp before ordering.')}
+        ${fact('Size', d.size, 'Confirmed by J\'S on WhatsApp.')}
+        <li><b>Delivery</b><span data-delivery-text></span></li>
+        <li><b>Payment</b><span>InstaPay, after J'S confirms your order.</span></li>
+      </ul>
+    </div>
+  </div>`;
+  document.title = p.name + " — J'S";
+  paintDelivery();
+}
+function renderFounder() {
+  const f = C.founder;
+  const photo = f.photo ? `<img src="${esc(f.photo)}" alt="${esc(f.name)}, founder of J'S" loading="lazy">`
+    : `<div class="inner"><b>Jana's photo</b>Real photo goes here<br><small>founder-jana.jpg</small></div>`;
+  const html = `<figure class="polaroid" style="margin:0"><span class="tape" aria-hidden="true"></span><div class="frame">${photo}</div><figcaption class="cap">${esc(f.name)} ♡</figcaption></figure>
+    <div>
+      <span class="sticker eyebrow">The founder</span>
+      <h2>MEET THE GIRL <span class="pk">BEHIND J'S.</span></h2>
+      <p class="lede" style="color:var(--cream);margin-top:20px">J'S is ${esc(f.name)}'s little treat brand, starting in Alexandria with the Classic Cinnamon Roll.</p>
+      ${f.bio ? `<p style="max-width:56ch">${esc(f.bio)}</p>` : ''}
+      <svg class="heart wobble" aria-hidden="true"><use href="#heart"/></svg>
+    </div>`;
+  $$('[data-founder]').forEach(el => el.innerHTML = html);
+}
+function renderImgSlots() {
+  $$('[data-img]').forEach(el => {
+    const k = el.dataset.img, slot = $('.imgslot', el);
+    if (k === 'hero') slot.innerHTML = pic(C.images.hero, 'Classic Cinnamon Roll by J\'S', rollSvg(), 'hero-classic-roll.jpg');
+    if (k === 'packaging') slot.innerHTML = pic(C.images.packaging, 'J\'S packaging', '<svg class="roll" viewBox="0 0 600 600" role="img" aria-label="Illustration of a J\'S treat box"><use href="#box" width="600" height="600"/></svg>', 'packaging-box-mockup.jpg');
+  });
+}
+function renderDrop() {
+  const L = C.launch, out = [];
+  if (isNum(L.limitedQuantity) && L.limitedQuantity > 0) out.push(`<div class="drop-copy facts"><span class="sticker">Only ${L.limitedQuantity} rolls in this drop</span></div>`);
+  const dl = L.deadline ? new Date(L.deadline) : null;
+  if (dl && !isNaN(dl) && dl > new Date()) out.push(`<p class="note" style="margin-bottom:8px">Orders for this drop close in:</p><div class="countdown" id="cd" aria-live="off"></div>`);
+  $('#dropFacts').innerHTML = out.join('');
+  if ($('#cd')) {
+    const tick = () => {
+      const ms = dl - new Date();
+      if (ms <= 0) { $('#dropFacts').innerHTML = '<p class="note">This drop has closed. Message J\'S on WhatsApp for the next one.</p>'; clearInterval(timer); return; }
+      const parts = [['days', 864e5], ['hrs', 36e5], ['min', 6e4], ['sec', 1e3]];
+      let r = ms; $('#cd').innerHTML = parts.map(([l, u]) => { const v = Math.floor(r / u); r -= v * u; return `<div><b>${String(v).padStart(2, '0')}</b><span>${l}</span></div>`; }).join('');
+    };
+    const timer = setInterval(tick, 1000); tick();
+  }
+}
+function deliveryText() {
+  const d = C.delivery, parts = [];
+  if (!isNum(d.fee) && !d.areas.length && !d.eta) return 'Delivery is available in Alexandria. Final delivery fee and availability will be confirmed on WhatsApp.';
+  parts.push('Delivery is available in Alexandria' + (d.areas.length ? ' — ' + d.areas.join(', ') : '') + '.');
+  parts.push(isNum(d.fee) ? 'Delivery fee: ' + fmt(d.fee) + '.' : 'Delivery fee confirmed on WhatsApp.');
+  if (d.eta) parts.push(d.eta + '.');
+  parts.push("J'S confirms availability on WhatsApp.");
+  return parts.join(' ');
+}
+function paintDelivery() { $$('[data-delivery-text]').forEach(el => el.textContent = deliveryText()); }
+function renderFaq() {
+  const d = C.delivery, prod = featured;
+  const qa = [
+    ['How do I order?', `Add the ${esc(prod.name)} to your order, fill in your details on the <a href="#order">Order page</a>, then tap <b>Continue on WhatsApp</b>. A ready-made message opens — just press send.`],
+    ['Is my order confirmed when I send the WhatsApp message?', `Not yet. Your message is an order request. J'S replies to confirm availability, the delivery fee and your final total. It's confirmed once J'S says so.`],
+    ['How much is a roll?', isNum(prod.price) ? `The ${esc(prod.name)} is ${fmt(prod.price)}. Delivery is added separately.` : `J'S confirms the price with you on WhatsApp before you pay anything.`],
+    ['Where do you deliver?', `Alexandria, Egypt. ${d.areas.length ? 'Current areas: ' + esc(d.areas.join(', ')) + '.' : 'Tell us your area in the order form and J\'S will confirm delivery for it.'}`],
+    ['How much is delivery and how long does it take?', isNum(d.fee) || d.eta ? esc(deliveryText()) : `The delivery fee and timing are confirmed on WhatsApp for your area. No guesses here — J'S tells you before you pay.`],
+    ['How do I pay?', `With InstaPay, after J'S confirms your final amount. Transfer to the confirmed J'S alias, send the screenshot on WhatsApp, and J'S checks it by hand. <a href="#payment">See payment steps</a>.`],
+    ['Can I pick up my order?', d.pickup ? esc(d.pickup) : `Message J'S on WhatsApp and ask — the site only takes delivery requests for now.`],
+    ['What about ingredients and allergies?', prod.details?.allergens ? esc(prod.details.allergens) : `Full details will be listed here. If you have an allergy, ask J'S on WhatsApp before ordering and mention it in your order notes.`],
+    ['Can I order boxes or other treats?', `Not yet. The ${esc(prod.name)} is the only treat on the menu right now. Boxes and more are coming later.`]
+  ];
+  $('#faqSlot').innerHTML = qa.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary>${q}</summary><div class="a"><p>${a}</p></div></details>`).join('');
+}
+function renderInstagram() {
+  const s = C.social;
+  if (s.instagramUrl) $('#igSlot').innerHTML = `<a href="${esc(s.instagramUrl)}" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><span>Instagram<br><small>${esc(s.instagramHandle)}</small></span></a>`;
+}
+function renderAreaField() {
+  const a = C.delivery.areas;
+  if (!a.length) return;
+  $('#areaField').innerHTML = `<label for="f-area">Area / district (required)</label><select id="f-area" name="area" required aria-describedby="e-area"><option value="">Choose your area</option>${a.map(x => `<option>${esc(x)}</option>`).join('')}</select><p class="err" id="e-area"></p>`;
+}
+
+/* ---------- Cart UI ---------- */
+function linesHtml() {
+  return `<ul class="lines">${cart.map(l => {
+    const p = byId(l.id), lt = isNum(p.price) ? fmt(p.price * l.qty) : '';
+    return `<li class="line" data-cid="${esc(p.id)}">
+      <div class="lp">${p.image ? `<img src="${esc(p.image)}" alt="">` : '<svg viewBox="0 0 600 600" aria-hidden="true"><use href="#roll" width="600" height="600"/></svg>'}</div>
+      <div><div class="ln">${esc(p.name)}</div><div class="lu">${isNum(p.price) ? fmt(p.price) + ' each' : 'Price confirmed on WhatsApp'}</div>
+        <div class="lc"><div class="qty sm" role="group" aria-label="Quantity of ${esc(p.name)}"><button type="button" data-act="cdec" aria-label="Decrease quantity">−</button><input type="number" inputmode="numeric" min="1" max="${MAX}" value="${l.qty}" data-act="cset" aria-label="Quantity of ${esc(p.name)}"><button type="button" data-act="cinc" aria-label="Increase quantity">+</button></div><button type="button" class="rm" data-act="cremove">Remove</button></div></div>
+      ${lt ? `<div class="lt">${lt}</div>` : ''}</li>`;
+  }).join('')}</ul>`;
+}
+function totalsHtml() {
+  const t = totals();
+  return `<dl class="totals">
+    <div><dt>Items</dt><dd>${itemCount()}</dd></div>
+    <div><dt>Subtotal</dt><dd>${t.subtotal !== null ? fmt(t.subtotal) : TBC}</dd></div>
+    <div><dt>Delivery (Alexandria)</dt><dd>${t.fee !== null ? fmt(t.fee) + '*' : TBC}</dd></div>
+    <div class="grand"><dt>Final total</dt><dd>${t.total !== null ? fmt(t.total) + '*' : TBC}</dd></div>
+  </dl>${t.total !== null ? '<p class="note" style="margin-top:8px">*Final amount is confirmed by J\'S on WhatsApp.</p>' : ''}`;
+}
+const emptyHtml = `<div class="empty"><svg viewBox="60 120 480 440" aria-hidden="true"><use href="#box" width="600" height="600"/></svg><h3>Your box is empty.</h3><p>A little something good is one tap away.</p><a class="btn bur" href="#rolls" data-close>See the Rolls</a></div>`;
+function renderCart() {
+  const n = itemCount(), cc = $('#cartCount');
+  cc.textContent = n; cc.dataset.n = n;
+  $('#cartBtn').setAttribute('aria-label', `Open your order, ${n} item${n === 1 ? '' : 's'}`);
+  $('#drawerBody').innerHTML = cart.length ? linesHtml() + totalsHtml() : emptyHtml;
+  $('#drawerFoot').innerHTML = cart.length ? `<a class="btn bur big" href="#checkout-area" data-close>Checkout</a><button class="btn cream" type="button" data-close>Keep browsing</button><p class="note" style="text-align:center">Delivery in Alexandria. Final total confirmed on WhatsApp.</p>` : '';
+  $('#summarySlot').innerHTML = cart.length ? linesHtml() + totalsHtml() : emptyHtml.replace(' data-close', '');
+  if (!cart.length && !$('#reviewPanel').hidden && $('#sentNote').hidden) hideReview();
+}
+
+/* ---------- Drawer ---------- */
+let lastFocus = null;
+function openDrawer() {
+  lastFocus = document.activeElement;
+  $('#toast').classList.remove('show');
+  const d = $('#drawer'), s = $('#scrim');
+  d.hidden = false; s.hidden = false; void d.offsetWidth;
+  requestAnimationFrame(() => { d.classList.add('open'); s.classList.add('open'); });
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => $('#drawerClose').focus(), 50);
+}
+function closeDrawer(restore = true) {
+  const d = $('#drawer'), s = $('#scrim');
+  if (d.hidden) return;
+  d.classList.remove('open'); s.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { d.hidden = true; s.hidden = true; }, 320);
+  if (restore && lastFocus) lastFocus.focus();
+}
+$('#cartBtn').addEventListener('click', openDrawer);
+$('#drawerClose').addEventListener('click', () => closeDrawer());
+$('#scrim').addEventListener('click', () => closeDrawer());
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeDrawer(); closeMenu(); }
+  if (e.key === 'Tab' && !$('#drawer').hidden) {
+    const f = $$('#drawer a[href],#drawer button,#drawer input').filter(x => !x.disabled);
+    if (!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  }
+});
+
+/* ---------- Toast ---------- */
+let toastT;
+function toast(msg) {
+  $('#toastMsg').textContent = msg; $('#toast').classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => $('#toast').classList.remove('show'), 3200);
+}
+$('#toastView').addEventListener('click', () => { $('#toast').classList.remove('show'); openDrawer(); });
+
+/* ---------- Interaction (delegated) ---------- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act],[data-close]');
+  if (!t) return;
+  if (t.hasAttribute('data-close')) { closeDrawer(false); if (t.tagName === 'A' && t.getAttribute('href') === location.hash) { e.preventDefault(); route(); } if (t.tagName === 'BUTTON') lastFocus && lastFocus.focus(); return; }
+  const act = t.dataset.act, buy = t.closest('.buy'), line = t.closest('.line');
+  if (buy && ['dec', 'inc', 'add'].includes(act)) {
+    const inp = $('input', buy), v = clampQ(inp.value);
+    if (act === 'dec') inp.value = Math.max(1, v - 1);
+    if (act === 'inc') inp.value = Math.min(MAX, v + 1);
+    if (act === 'add') {
+      const p = byId(buy.dataset.pid), before = (cart.find(l => l.id === p.id) || {}).qty || 0;
+      if (addItem(p.id, v)) {
+        const added = ((cart.find(l => l.id === p.id) || {}).qty || 0) - before;
+        toast(added < v ? `Max ${MAX} per order — your order has ${MAX} × ${p.name}.` : `Added ${added} × ${p.name}`);
+        const cb = $('#cartBtn'); cb.classList.remove('bump'); void cb.offsetWidth; cb.classList.add('bump');
+        t.textContent = 'Added ♡'; setTimeout(() => t.textContent = 'Add to Order', 1400);
+        inp.value = 1;
+      }
+    }
+  }
+  if (line) {
+    const id = line.dataset.cid, l = cart.find(x => x.id === id);
+    if (!l) return;
+    if (act === 'cdec') { if (l.qty > 1) setQty(id, l.qty - 1); }
+    if (act === 'cinc') setQty(id, l.qty + 1);
+    if (act === 'cremove') { removeItem(id); toast('Removed from your order'); }
+    refocus(id, act);
+  }
+});
+function refocus(id, act) {
+  const sel = `[data-cid="${CSS.escape(id)}"] [data-act="${act}"]`;
+  const inDrawer = !$('#drawer').hidden;
+  const el = $((inDrawer ? '#drawer ' : '#summarySlot ') + sel) || (inDrawer ? $('#drawerClose') : null);
+  el && el.focus();
+}
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.matches('.buy input')) t.value = clampQ(t.value);
+  if (t.matches('[data-act="cset"]')) { const id = t.closest('.line').dataset.cid; setQty(id, t.value); }
+});
+
+/* ---------- Checkout ---------- */
+const form = $('#checkout');
+const draftKey = 'js-checkout-draft-v1';
+function restoreDraft() {
+  const d = store.get(draftKey); if (!d) return;
+  for (const k of ['name', 'phone', 'area', 'address', 'notes']) if (form.elements[k] && typeof d[k] === 'string') form.elements[k].value = d[k];
+}
+form.addEventListener('input', e => {
+  const d = {}; for (const k of ['name', 'phone', 'area', 'address', 'notes']) d[k] = form.elements[k].value;
+  store.set(draftKey, d);
+  if (e.target.getAttribute('aria-invalid') === 'true') validateField(e.target.name);
+});
+function normPhone(v) {
+  let s = String(v).replace(/[\s\-().]/g, '');
+  if (s.startsWith('+20')) s = '0' + s.slice(3); else if (s.startsWith('0020')) s = '0' + s.slice(4); else if (s.startsWith('20') && s.length === 12) s = '0' + s.slice(2);
+  return s;
+}
+const rules = {
+  name: v => v.trim().length >= 2 ? '' : 'Please enter your full name.',
+  phone: v => !v.trim() ? 'Please enter your phone number.' : /^01[0125]\d{8}$/.test(normPhone(v)) ? '' : 'Enter an Egyptian mobile number, like 01xxxxxxxxx.',
+  area: v => v.trim().length >= 2 ? '' : (C.delivery.areas.length ? 'Please choose your area.' : 'Please enter your area or district in Alexandria.'),
+  address: v => v.trim().length >= 8 ? '' : 'Please enter your full address (street, building, floor).'
+};
+function validateField(k) {
+  const el = form.elements[k]; if (!el || !rules[k]) return true;
+  const msg = rules[k](el.value);
+  el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+  $('#e-' + k).textContent = msg;
+  return !msg;
+}
+function buildMessage(d) {
+  const t = totals(), L = [];
+  L.push("J'S ORDER REQUEST", '');
+  L.push('Customer name: ' + d.name, 'Customer phone: ' + d.phone, 'Delivery city: ' + C.delivery.city, 'Delivery area: ' + d.area, 'Full address: ' + d.address);
+  if (cart.length === 1) {
+    const l = cart[0], p = byId(l.id);
+    L.push('Product: ' + p.name, 'Quantity: ' + l.qty, 'Unit price: ' + (isNum(p.price) ? fmt(p.price) : TBC));
+  } else {
+    L.push('Products:');
+    cart.forEach((l, i) => { const p = byId(l.id); L.push(`${i + 1}. ${p.name} — Quantity: ${l.qty} — Unit price: ${isNum(p.price) ? fmt(p.price) : TBC}`); });
+  }
+  L.push('Subtotal: ' + (t.subtotal !== null ? fmt(t.subtotal) : TBC));
+  L.push('Delivery fee: ' + (t.fee !== null ? fmt(t.fee) + " (to be confirmed by J'S)" : TBC));
+  L.push('Final total: ' + (t.total !== null ? fmt(t.total) + " (to be confirmed by J'S)" : TBC));
+  L.push('Order notes: ' + (d.notes || 'None'), '');
+  L.push('Please confirm product availability, delivery fee, and final order details.');
+  return L.join('\n');
+}
+let lastMsg = '';
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  cart = sanitize(cart); renderCart();
+  const ok = ['name', 'phone', 'area', 'address'].map(validateField).every(Boolean);
+  if (!cart.length) { $('#formErr').textContent = 'Your order is empty — add a Classic Cinnamon Roll first.'; $('#summarySlot').scrollIntoView({ block: 'center' }); return; }
+  if (!ok) { $('#formErr').textContent = 'Please fix the highlighted fields.'; const bad = $('[aria-invalid=true]', form); bad && bad.focus(); return; }
+  $('#formErr').textContent = '';
+  const f = form.elements;
+  const d = { name: f.name.value.trim(), phone: normPhone(f.phone.value), area: f.area.value.trim(), address: f.address.value.trim().replace(/\s*\n\s*/g, ', '), notes: f.notes.value.trim().replace(/\s*\n\s*/g, ' ') };
+  lastMsg = buildMessage(d);
+  $('#msgPreview').textContent = lastMsg;
+  $('#waLink').href = WA + '?text=' + encodeURIComponent(lastMsg);
+  $('#sentNote').hidden = true;
+  $('#formPanel').hidden = true; $('#reviewPanel').hidden = false;
+  $('#reviewPanel').scrollIntoView({ block: 'start' }); $('#reviewPanel').focus({ preventScroll: true });
+});
+function hideReview() { $('#reviewPanel').hidden = true; $('#formPanel').hidden = false; }
+$('#editBtn').addEventListener('click', () => { hideReview(); $('#f-name').focus(); });
+$('#waLink').addEventListener('click', () => { setTimeout(() => { $('#sentNote').hidden = false; }, 300); });
+$('#copyMsg').addEventListener('click', async e => {
+  try { await navigator.clipboard.writeText(lastMsg); e.target.textContent = 'Copied ✓'; } catch (err) { e.target.textContent = 'Copy blocked — select the text above'; }
+});
+$('#newOrder').addEventListener('click', () => { cart = []; save(); $('#sentNote').hidden = true; hideReview(); location.hash = 'rolls'; });
+
+/* ---------- Payment ---------- */
+$('#aliasText').textContent = C.payment.instapayAlias;
+$('#revealPay').addEventListener('click', e => {
+  const open = $('#payDetails').hidden; $('#payDetails').hidden = !open;
+  e.currentTarget.setAttribute('aria-expanded', String(open));
+  e.currentTarget.textContent = open ? 'Hide InstaPay details' : "J'S confirmed my total — show InstaPay details";
+});
+$('#copyAlias').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(C.payment.instapayAlias); $('#copyState').textContent = 'Alias copied.'; }
+  catch (err) { $('#copyState').textContent = 'Copy is blocked here — the alias is ' + C.payment.instapayAlias + '.'; }
+});
+
+/* ---------- Mobile menu ---------- */
+function closeMenu() { $('#nav').classList.remove('open'); $('#menuBtn').setAttribute('aria-expanded', 'false'); }
+$('#menuBtn').addEventListener('click', () => { const o = !$('#nav').classList.contains('open'); $('#nav').classList.toggle('open', o); $('#menuBtn').setAttribute('aria-expanded', String(o)); });
+$('#nav').addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+
+/* ---------- Routing (#home, #rolls, #story, #order, #<product-slug>, plus in-page anchors) ---------- */
+const VIEWS = ['home', 'rolls', 'story', 'order'];
+const ANCHORS = { faq: 'order', payment: 'order', 'checkout-area': 'order', signature: 'home', jana: 'home', 'first-drop': 'home' };
+let currentView = null;
+function show(view) {
+  $$('.view').forEach(v => v.classList.toggle('active', v.dataset.view === view));
+  $$('[data-nav]').forEach(a => a.dataset.nav === view ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  currentView = view;
+  if (view !== 'product') document.title = { home: "J'S — Little Treats. Big Moods.", rolls: "The Rolls — J'S", story: "Our Story — J'S", order: "Order Now — J'S" }[view];
+  observeReveals();
+}
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const prev = currentView;
+  if (h === 'main') { $('#main').focus(); return; }
+  const prod = P.find(p => p.slug === h);
+  if (prod) { show('product'); renderDetail(prod); observeReveals(); window.scrollTo(0, 0); return; }
+  if (ANCHORS[h]) {
+    if (currentView !== ANCHORS[h]) show(ANCHORS[h]);
+    requestAnimationFrame(() => { const el = document.getElementById(h); el && el.scrollIntoView({ block: 'start' }); });
+    return;
+  }
+  show(VIEWS.includes(h) ? h : 'home');
+  if (prev !== null || h) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+$('[data-skip]').addEventListener('click', e => { e.preventDefault(); $('#main').focus(); });
+
+/* ---------- Reveal on scroll ---------- */
+const revealObs = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' }) : null;
+function observeReveals() { $$('.view.active .reveal:not(.in)').forEach(el => revealObs ? revealObs.observe(el) : el.classList.add('in')); }
+
+/* ---------- Owner setup notice ---------- */
+function renderSetup() {
+  if (!C.showSetupNotice) return;
+  const miss = [];
+  P.forEach(p => { if (!isNum(p.price)) miss.push(`Selling price for ${esc(p.name)} — <code>JS_PRODUCTS[].price</code>`); if (!p.image) miss.push(`Product photo for ${esc(p.name)} — <code>image</code>`); });
+  if (!isNum(C.delivery.fee)) miss.push('Delivery fee — <code>delivery.fee</code>');
+  if (!C.delivery.areas.length) miss.push('Delivery areas — <code>delivery.areas</code>');
+  if (!C.delivery.eta) miss.push('Delivery time estimate — <code>delivery.eta</code>');
+  if (!C.delivery.pickup) miss.push('Pickup (if offered) — <code>delivery.pickup</code>');
+  if (!C.social.instagramUrl) miss.push('Exact Instagram URL — <code>social.instagramUrl</code>');
+  if (!C.founder.photo) miss.push('Jana\'s photo — <code>founder.photo</code>');
+  if (!C.images.hero) miss.push('Hero photo — <code>images.hero</code>');
+  if (!miss.length) return;
+  $('#setupSum').textContent = `Owner setup: ${miss.length} details to add`;
+  $('#setupBox').innerHTML = `<p style="margin:0">These show as "confirmed on WhatsApp" or placeholders until you fill them in <code>JS_CONFIG</code> / <code>JS_PRODUCTS</code>:</p><ul>${miss.map(m => `<li>${m}</li>`).join('')}</ul><p style="margin:0">Hide this note for good with <code>showSetupNotice: false</code>.</p><button class="btn cream" type="button" id="setupHide" style="margin-top:10px;min-height:40px">Hide for now</button>`;
+  $('#setupHide').addEventListener('click', () => { $('#setup').hidden = true; });
+  $('#setup').hidden = false;
+}
+
+/* ---------- Boot ---------- */
+$('#year').textContent = new Date().getFullYear();
+renderImgSlots(); renderSignature(); renderMenu(); renderFounder(); renderDrop(); renderFaq(); renderInstagram(); renderAreaField(); restoreDraft(); paintDelivery(); renderCart(); renderSetup();
+route();
+}
+</script>
+</body>
+</html>
