@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><base href="../">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body{margin:0;background:#fff}
+.scene{position:relative;width:1000px;height:1250px;overflow:hidden;display:grid;place-items:center}
+.scene .b3{width:960px;aspect-ratio:auto;height:900px}
+.scene .b3-hint{display:none}
+.bg-blush{background:var(--blush)}
+.bg-blush::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(rgba(94,11,19,.1) 0 25%,transparent 0 50%) 0 0/70px 70px}
+.bg-bur{background:var(--bur)}
+.bg-cream{background:var(--cream)}
+.bg-cream::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(rgba(94,11,19,.08) 0 25%,transparent 0 50%) 0 0/70px 70px}
+.bg-esp{background:var(--esp)}
+.light{position:absolute;inset:0;background:radial-gradient(60% 50% at 40% 30%,rgba(255,250,235,.35),transparent 70%),radial-gradient(120% 80% at 50% 120%,rgba(40,17,12,.35),transparent 60%);pointer-events:none}
+.macro img{position:absolute;max-width:none;width:260%;left:-80%;top:-70%;filter:saturate(1.08)}
+.macro.icing img{width:330%;left:-115%;top:-100%}
+.vig{position:absolute;inset:0;box-shadow:inset 0 0 220px 60px rgba(40,17,12,.55);pointer-events:none}
+.og{width:1200px;height:630px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 60px;gap:20px}
+.og .b3{width:600px;height:600px;aspect-ratio:auto}
+.og h1{font:700 64px/1 Poppins;color:var(--cream);margin:16px 0 10px}
+.og p{font:600 24px/1.3 Poppins;color:var(--blush);margin:0}
+.og .tk{display:inline-block;margin-top:26px;background:var(--cream);color:var(--bur);font:700 30px/1 Poppins;padding:16px 26px;border-radius:14px}
+.icon{width:512px;height:512px;display:grid;place-items:center;background:var(--bur)}
+</style></head><body>
+<section id="r-box-angle" class="scene bg-blush"><div id="b1" style="margin-top:110px"></div><div class="light"></div></section>
+<section id="r-box-top" class="scene bg-cream"><div id="b2" style="margin-top:300px"></div><div class="light"></div></section>
+<section id="r-box-closed" class="scene bg-bur"><div id="b3" style="margin-top:120px"></div><div class="light"></div></section>
+<section id="r-shared" class="scene bg-blush"><div id="b4" style="margin-top:300px"></div><div class="light"></div></section>
+<section id="r-swirl" class="scene macro bg-esp"><img src="assets/illustrations/roll-top.svg" alt=""><div class="vig"></div></section>
+<section id="r-icing" class="scene macro icing bg-esp"><img src="assets/illustrations/roll-top.svg" alt=""><div class="vig"></div></section>
+<section id="r-roll" class="scene bg-blush" style="height:1000px"><img src="assets/illustrations/roll-top.svg" style="width:86%" alt=""><div class="light"></div></section>
+<section id="r-og" class="og bg-bur"><div><img src="assets/brand/wordmark-sticker.svg" style="width:240px" alt=""><h1>THE BIG MOOD BOX</h1><p>12 Classic Cinnamon Rolls · Alexandria</p><span class="tk">450 EGP · delivery included</span></div><div style="height:540px;border:5px solid #28110C;border-radius:30px;overflow:hidden;transform:rotate(3deg);box-shadow:14px 14px 0 #28110C"><img src="assets/photos/roll-hero.webp" style="width:100%;height:100%;object-fit:cover" alt=""></div></section>
+<section id="r-icon" class="icon"><img src="assets/brand/monogram.svg" style="width:470px" alt=""></section>
+<script src="js/box3d.js"></script>
+<script>
+const b1=JSBox(document.getElementById('b1'),{open:true,rx:-30,ry:-30,interactive:false,hint:false,maxScale:1.55});
+const b2=JSBox(document.getElementById('b2'),{open:true,rx:-74,ry:0,interactive:false,hint:false,maxScale:1.6});
+const b3=JSBox(document.getElementById('b3'),{open:false,rx:-26,ry:30,interactive:false,hint:false,maxScale:1.75});
+const b4=JSBox(document.getElementById('b4'),{open:true,rx:-74,ry:0,interactive:false,hint:false,maxScale:1.6});
+const cols=[['#FDF2D2','#28110C'],['#5E0B13','#FDF2D2'],['#603027','#FDF2D2'],['#E1ACB5','#28110C']];
+b4.setTags(Array.from({length:12},(_,i)=>({label:'ABCD'[i%4],color:cols[i%4][0],fg:cols[i%4][1]})));
+
+</script></body></html>
